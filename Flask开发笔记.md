@@ -70,237 +70,9 @@ class Todo3(Resource):
 ```
 
 
-# Request Parsing
-## 请求参数解析
-维护到2.0版本将会被废弃，可能用其他的包替代[marshmallow: simplified object serialization](https://marshmallow.readthedocs.io/en/3.0/)
-
-请求解析接口`reqparse`由`argparse`接口二次开发而来，可以简便地访问`flask.request`里的任何变量
-变量默认的类型为 unicode string  
-help参数值，在被返回错误时，作为错误信息  
-```python
-from flask_restful import reqparse
-# flask.Request.values dict 有两个值
-parser = reqparse.RequestParser()
-parser.add_argument('rate', type=int, help='Rate cannot be converted')
-parser.add_argument('name')
-args = parser.parse_args()
-```
-
-可以给解析的参数取别名
-```python
-parser.add_argument('name', dest='public_name')
-
-args = parser.parse_args()
-args['public_name']
-```
-
-RequestParser() 会解析 flask.Request.values, and flask.Request.json.
-基本上请求的参数，无论 get,post,header,cookie,file 都能接收到，由 location 指定。
-```python
-# Look only in the POST body
-parser.add_argument('name', type=int, location='form')
-
-# Look only in the querystring
-parser.add_argument('PageSize', type=int, location='args')
-
-# From the request headers
-parser.add_argument('User-Agent', location='headers')
-
-# From http cookies
-parser.add_argument('session_id', location='cookies')
-
-# From file uploads
-parser.add_argument('picture', type=werkzeug.datastructures.FileStorage, location='files')
-
-# 解析多个位置
-parser.add_argument('text', location=['headers', 'values'])
-
-# 解析 json
-parser.add_argument('language', type=list, location='json')
-```
-
-## Parser 继承
-继承一个 Parser 对象，子类可以继承父类的请求参数，并且可以重写移除。
-
-- `parser.copy()` 拷贝 parser对象
-- `parser_copy.replace_argument()` 重写参数定义
-- `parser_copy.remove_argument()` 移除参数定义
-
-```python
-from flask_restful import reqparse
-
-parser = reqparse.RequestParser()
-parser.add_argument('foo', type=int)
-
-parser_copy = parser.copy()
-parser_copy.add_argument('bar', type=int)
-
-# parser_copy has both 'foo' and 'bar'
-
-parser_copy.replace_argument('foo', required=True, location='json')
-# 'foo' is now a required str located in json, not an int as defined
-#  by original parser
-
-parser_copy.remove_argument('foo')
-# parser_copy no longer has 'foo' argument
-```
-
-## Error 处理
-处理请求错误，指定RequestParser选项参数`bundle_errors`
-```python
-from flask_restful import reqparse
-
-parser = reqparse.RequestParser(bundle_errors=True)
-parser.add_argument('foo', type=int, required=True)
-parser.add_argument('bar', type=int, required=True)
-
-# 如果请求没有都包含 `foo` `bar`参数，将会返回所有错误，默认的只会返回第一个参数错误，返回信息如下
-
-{
-    "message":  {
-        "foo": "foo error message",
-        "bar": "bar error message"
-    }
-}
-```
-
-为整个应用配置 请求错误处理
-```python
-from flask import Flask
-
-app = Flask(__name__)
-app.config['BUNDLE_ERRORS'] = True
-```
-
-每个字段的错误信息用`RequestParser.add_argument`的 `help` 参数指定
-`help` 包含一个插值 `error_msg` , 表示错误类型的字符串
-```python
-from flask_restful import reqparse
-
-parser = reqparse.RequestParser()
-parser.add_argument('foo', choices=('one', 'two'), help='Bad choice: {error_msg}')
-# If a request comes in with a value of "three" for `foo`:
-{
-    "message":  {
-        "foo": "Bad choice: three is not a valid choice",
-    }
-}
-```
-
-# Output Fields 输出字段
-使用 fields 模型控制输出数据的结构
-```python
-from flask_restful import Resource, fields, marshal_with
-
-resource_fields = {
-    'name': fields.String,
-    'address': fields.String,
-    'date_updated': fields.DateTime(dt_format='rfc822')
-}
-
-class Todo(Resource):
-    @marshal_with(resource_fields, envelope='resource')
-    def get(self, **kwargs):
-        return db_get_todo()
-
-# marshal_with 装饰器的作用如下
-class Todo(Resource):
-    def get(self, **kwargs):
-        return marshal(db_get_todo(), resource_fields), 200
-```
-
-给输出的字段重命名：
-```python
-fields = {
-    'name': fields.String(attribute='private_name'),
-    # lambda 函数
-    'username': fields.String(attribute=lambda x: x._private_name),
-    # 访问属性的属性
-    'nickname': fields.String(attribute='people_list.0.person_dictionary.name'),
-    # 设置默认值
-    'firstname': fields.String(default='Anonymous User'),
-    'address': fields.String,
-}
-
-```
 
 
-
-## marshal_with 装饰器
-使用 `marshal_with()` 装饰器 描述响应数据的格式
-```python
-from flask_restful import fields, marshal_with
-
-resource_fields = {
-    'task':   fields.String,
-    'uri':    fields.Url('todo_ep')
-}
-
-class TodoDao(object):
-    def __init__(self, todo_id, task):
-        self.todo_id = todo_id
-        self.task = task
-
-        # This field will not be sent in the response
-        self.status = 'active'
-
-class Todo(Resource):
-    @marshal_with(resource_fields)
-    def get(self, **kwargs):
-        return TodoDao(todo_id='my_todo', task='Remember the milk')
-```
-
-# api接口多种输出格式
-## json
-使用标准库 json 模块，flask.json 序列化器包括JSON规范中没有的序列化功能。
-```python
-app = Flask(__name__)
-api = Api(app)
-
-@api.representation('application/json')
-def output_json(data, code, headers=None):
-    resp = make_reponse(json.dumps(data), code)
-    resp.headers.extend(headers or {})
-    return resp
-```
-
-## csv
-```python
-api = Api(app)
-
-@api.representation('text/csv')
-def output_csv(data, code, headers=None):
-    pass
-    # implement csv output!
-```
-
-## 多种输出类型
-```python
-class Api(restful.Api):
-    def __init__(self, *args, **kwargs):
-        super(Api, self).__init__(*args, **kwargs)
-        self.representations = {
-            'application/xml': output_xml,
-            'text/html': output_html,
-            'text/csv': output_csv,
-            'application/json': output_json,
-        }
-```
-
-# 用 curl 发送请求
-传送参数
-```python
-curl http://api.example.com -d "name=bob" -d "name=sue" -d "name=joe"
-```
-
-# 参考阅读
-- [flask document](http://flask.pocoo.org/docs/1.0/)
-- [Flask Mega-Tutorial series](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates)
-- [Flask构建大型应用程序教程 上面那个教程的中文版](https://labike.github.io/)
-- [jinja template engine](http://jinja.pocoo.org/)
-
-# flask
-## 指定 falsk app 监听的地址和端口号
+# 指定 falsk app 监听的地址和端口号
 代码中指定，然后运行：`python **.py` 即可
 ```python
 app.run(
@@ -310,11 +82,6 @@ app.run(
 )
 ```
 或者使用 flask 命令 ` falsk run -h 0.0.0.0 -p 7777`
-
-# flask-restful
-安装扩展：`pip install flask-restful`
-
-
 
 # Request Parsing
 ## 请求参数解析
@@ -453,8 +220,103 @@ $ curl http://localhost:5000/todos/todo2 -X DELETE -v
 $ curl http://localhost:5000/todos -d "task=something new" -X POST -v
 ```
 
-# 参考阅读
-- [flask document](http://flask.pocoo.org/docs/1.0/)
-- [Flask Mega-Tutorial series](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates)
-- [Flask构建大型应用程序教程 上面那个教程的中文版](https://labike.github.io/)
-- [jinja template engine](http://jinja.pocoo.org/)
+# Output Fields 输出字段
+使用 fields 模型控制输出数据的结构
+```python
+from flask_restful import Resource, fields, marshal_with
+
+resource_fields = {
+    'name': fields.String,
+    'address': fields.String,
+    'date_updated': fields.DateTime(dt_format='rfc822')
+}
+
+class Todo(Resource):
+    @marshal_with(resource_fields, envelope='resource')
+    def get(self, **kwargs):
+        return db_get_todo()
+
+# marshal_with 装饰器的作用如下
+class Todo(Resource):
+    def get(self, **kwargs):
+        return marshal(db_get_todo(), resource_fields), 200
+```
+
+给输出的字段重命名：
+```python
+fields = {
+    'name': fields.String(attribute='private_name'),
+    # lambda 函数
+    'username': fields.String(attribute=lambda x: x._private_name),
+    # 访问属性的属性
+    'nickname': fields.String(attribute='people_list.0.person_dictionary.name'),
+    # 设置默认值
+    'firstname': fields.String(default='Anonymous User'),
+    'address': fields.String,
+}
+
+```
+
+
+
+## marshal_with 装饰器
+使用 `marshal_with()` 装饰器 描述响应数据的格式
+```python
+from flask_restful import fields, marshal_with
+
+resource_fields = {
+    'task':   fields.String,
+    'uri':    fields.Url('todo_ep')
+}
+
+class TodoDao(object):
+    def __init__(self, todo_id, task):
+        self.todo_id = todo_id
+        self.task = task
+
+        # This field will not be sent in the response
+        self.status = 'active'
+
+class Todo(Resource):
+    @marshal_with(resource_fields)
+    def get(self, **kwargs):
+        return TodoDao(todo_id='my_todo', task='Remember the milk')
+```
+
+# api接口多种输出格式
+## json
+使用标准库 json 模块，flask.json 序列化器包括JSON规范中没有的序列化功能。
+```python
+app = Flask(__name__)
+api = Api(app)
+
+@api.representation('application/json')
+def output_json(data, code, headers=None):
+    resp = make_reponse(json.dumps(data), code)
+    resp.headers.extend(headers or {})
+    return resp
+```
+
+## csv
+```python
+api = Api(app)
+
+@api.representation('text/csv')
+def output_csv(data, code, headers=None):
+    pass
+    # implement csv output!
+```
+
+## 多种输出类型
+```python
+class Api(restful.Api):
+    def __init__(self, *args, **kwargs):
+        super(Api, self).__init__(*args, **kwargs)
+        self.representations = {
+            'application/xml': output_xml,
+            'text/html': output_html,
+            'text/csv': output_csv,
+            'application/json': output_json,
+        }
+```
+
