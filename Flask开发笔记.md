@@ -10,6 +10,15 @@
 - [flask-restful api 文档](https://flask-restful.readthedocs.io/en/latest/api.html)
 - [flask-restful english document](https://flask-restful.readthedocs.io/en/latest/quickstart.html) 
 - [flask-restful 中文文档](http://www.pythondoc.com/Flask-RESTful/quickstart.html)
+- [Flask RESTful API 开发----基础篇 (2)](https://blog.igevin.info/posts/flask-rest-basic-2/)
+- [Flask 入门指南 - flask 开发用到的包和资料](https://blog.igevin.info/posts/flask-startup-guideline/)
+- [RESTful API 编写指南 - 讲解了很多关于api开发的要点](https://blog.igevin.info/posts/restful-api-get-started-to-write/)
+
+# 书籍资源
+- [Flask Web开发实战 配套资源](http://helloflask.com/book/)
+
+# 代码资源
+- [flask 相关的代码片段](http://flask.pocoo.org/snippets/)
 
 # 完善 api 需要完成的地方
 简单的api只需要增删改查即可，但是一个完善的api有许多工作要完善
