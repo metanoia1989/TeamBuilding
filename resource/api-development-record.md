@@ -7,6 +7,55 @@ Flask的模块化分配给了Blueprint 实现了，创建模块专属后缀，�
 
 记录遇到的这些问题，记录从中学习到的知识，这个项目能够让我成长，懂得怎么慢慢学习掌握陌生的知识，不会不要怕，有别人的讲解，有别人的示例，我可以先抄代码，然后慢慢熟悉理解。  
 
+# 相关资源和项目
+- [httpbin](https://httpbin.org) 测试request请求
+- [HTTP Request & Response Service, written in Python + Flask.](https://github.com/requests/httpbin)
+- [guicorn 是什么 wsgi http 服务器](http://www.cnblogs.com/ifkite/p/5460328.html)
+- [Token-Based Authentication With Flask](http://www.cnblogs.com/ifkite/p/5460328.html) 太复杂了    
+- [Flask扩展系列(八)–用户会话管理](http://www.bjhee.com/flask-ext8.html) 使用 Flask-Login 扩展
+- [Flask扩展系列(九)–HTTP认证](http://www.bjhee.com/flask-ext9.html) 使用 Flask-HTTPAuth 扩展
+- [Flask扩展系列(六)–缓存](http://www.bjhee.com/flask-ext6.html) Flask-Cache 扩展
+- [Flask扩展系列(三)–国际化I18N和本地化L10N](http://www.bjhee.com/flask-ext3.html) Flask-Babel扩展
+- [Flask扩展系列–自定义扩展](http://www.bjhee.com/flask-ext.html) 
+- [RESTful Authentication with Flask](https://blog.miguelgrinberg.com/post/restful-authentication-with-flask)
+
+
 # 登录以及权限验证
 登录本身就代表权限划分的一种，未登录和登录能看到的内容是不一样的，登录用户又根据身份，进行权限的进一步的细分。  
 flask 只提供了框架的基础，请求、响应、上下文，其他的都交给开发者自己实现。      
+
+flask web 开发一书里的登录认证是由 flask_login 的 login_user 实现的。   
+
+用户会话管理和登录验证，那么对于HTTP请求上的认证，比如Restful API请求的认证要怎么做呢？因为Restful API不保存状态，无法依赖Cookie及Session来保存用户信息，自然也无法使用Flask-Login扩展来实现用户认证。  
+
+# TODO
+1. 创建数据表及相关模型，并且填充数据  
+2. 登录测试 token 验证  
+3. 权限管理 
+4. 引入 flask-restplus 以及 swagger api 文档生成    
+5. react navtive 开发
+6. PC 端 react 应用开发 
+
+# 数据表
+
+超链接，音频，视频，文本，图片，文档附件   这几种是资源的媒体形式，根本不用单独建表。   
+而是要把这种类型的资源进行管理，超链接，音频，视频，图片，文档附件 都是需要单独管理的
+
+资源管理可以参照 google keep 的瀑布流 以及颜色  
+
+用户表 user 
+权限表 permission
+角色表 role  
+资源标签表 category PHP Python HTML5 前端 Linux 
+专题收集表 网络爬虫， react native app开发，微信公众号开发  收集
+资源内容表 存放各种资源的信息 - 主表  存放整个网站的资源信息
+资源链接表 存放各种资源的url的表   
+资源媒体类别表  超链接，音频，视频，文本，图片，文档附件 - 记录整个网站的资源链接
+
+以专题为主，资源标签作为识别辅助    
+```sql
+CREATE TABLE `user` (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(64) 
+)
+```
