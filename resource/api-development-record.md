@@ -44,18 +44,48 @@ flask web 开发一书里的登录认证是由 flask_login 的 login_user 实现
 资源管理可以参照 google keep 的瀑布流 以及颜色  
 
 用户表 user 
-权限表 permission
-角色表 role  
-资源标签表 category PHP Python HTML5 前端 Linux 
-专题收集表 网络爬虫， react native app开发，微信公众号开发  收集
-资源内容表 存放各种资源的信息 - 主表  存放整个网站的资源信息
-资源链接表 存放各种资源的url的表   
-资源媒体类别表  超链接，音频，视频，文本，图片，文档附件 - 记录整个网站的资源链接
+权限表 permission - 管理用户, 管理内容
+角色表 role  - 超级管理员 1 内容管理员 11 普通用户 12
+资源标签表 category PHP Python HTML5 前端 Linux         
+专题收集表 网络爬虫， react native app开发，微信公众号开发  收集        
+资源内容表 存放各种资源的信息 - 主表  存放整个网站的资源信息        
+资源链接表 存放各种资源的url的表    
+资源媒体类别表  超链接，音频，视频，文本，图片，文档附件 - 记录整个网站的资源链接  
+开发计划表  网站的问题反馈，后期的规划发展，TODO等等             
 
 以专题为主，资源标签作为识别辅助    
 ```sql
+
 CREATE TABLE `user` (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(64) 
-)
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `username` VARCHAR(64) NOT NULL UNIQUE,
+    `nickname` VARCHAR(64) COMMENT '昵称',
+    `location` VARCHAR(64) COMMENT '位置',
+    `about_me` VARCHAR(64) COMMENT '个人简介',
+    `member_since` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '注册时间',
+    `last_seen` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE  CURRENT_TIMESTAMP COMMENT '最后登录时间',
+    `role_id` INT NOT NULL DEFAULT 12 COMMENT '角色id',
+    `email` VARCHAR(64) NOT NULL UNIQUE,
+    `password_hash` VARCHAR(128),
+    `avatar_hash` VARCHAR(32) COMMENT '头像',
+    `confirmed` TINYINT(1) DEFAULT 0,
+    INDEX `index_username` (`username`),
+) 
+ENGINE=InnoDB 
+DEFAULT CHARSET=utf8mb4 
+COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `permission` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(64) COMMENT '权限名',
+    `code` VARCHAR(64) NOT NULL UNIQUE COMMENT '权限英文名',
+);
+
+CREATE TABLE `role` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(64) COMMENT '角色名',
+    `code` VARCHAR(64) NOT NULL UNIQUE COMMENT '角色英文名',
+    `default` TINYINT(1) DEFAULT 0 COMMENT '权限代码',
+);
+
 ```
