@@ -43,20 +43,20 @@ flask web 开发一书里的登录认证是由 flask_login 的 login_user 实现
 
 资源管理可以参照 google keep 的瀑布流 以及颜色  
 
-用户表 user 
-权限表 permission - 管理用户, 管理内容
-角色表 role  - 超级管理员 1 内容管理员 11 普通用户 12
+用户表 user         
+权限表 permission - 管理用户, 管理内容      
+角色表 role  - 超级管理员 1 内容管理员 11 普通用户 12       
 资源标签表 category PHP Python HTML5 前端 Linux         
 专题收集表 网络爬虫， react native app开发，微信公众号开发  收集        
 资源内容表 存放各种资源的信息 - 主表  存放整个网站的资源信息        
 资源链接表 存放各种资源的url的表    
-资源媒体类别表  超链接，音频，视频，文本，图片，文档附件 - 记录整个网站的资源链接  
+资源媒体类别表  超链接，音频，视频，文本，图片，文档附件 - 记录整个网站的资源链接       
 开发计划表  网站的问题反馈，后期的规划发展，TODO等等             
 
 以专题为主，资源标签作为识别辅助    
 ```sql
-
-CREATE TABLE `user` (
+# 用户表
+CREATE TABLE IF NOT EXISTS `user` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
     `username` VARCHAR(64) NOT NULL UNIQUE,
     `nickname` VARCHAR(64) COMMENT '昵称',
@@ -74,18 +74,34 @@ CREATE TABLE `user` (
 ENGINE=InnoDB 
 DEFAULT CHARSET=utf8mb4 
 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `permission` (
+# 权限表
+CREATE TABLE IF NOT EXISTS `permission` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(64) COMMENT '权限名',
     `code` VARCHAR(64) NOT NULL UNIQUE COMMENT '权限英文名',
 );
-
-CREATE TABLE `role` (
+# 角色表
+CREATE TABLE IF NOT EXISTS `role` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(64) COMMENT '角色名',
     `code` VARCHAR(64) NOT NULL UNIQUE COMMENT '角色英文名',
-    `default` TINYINT(1) DEFAULT 0 COMMENT '权限代码',
+    `default` TINYINT(1) DEFAULT 0 COMMENT '用户默认角色',
 );
-
+# 标签表
+CREATE TABLE IF NOT EXISTS `category` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(64) NOT NULL UNIQUE COMMENT '标签名',
+);
+# 内容表
+CREATE TABLE IF NOT EXISTS `sources` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `title` VARCHAR(64) NOT NULL COMMENT '资源名',
+    `content_md` TEXT COMMENT '资源内容 markdown纯文本',
+    `content_html` TEXT COMMENT '资源内容 html',
+    `timestamp` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '添加时间',
+    `pin` TINYINT(1) DEFAULT 0 COMMENT '置顶',
+    `hot` TINYINT(1) DEFAULT 0 COMMENT '加精',
+    `author_id` INT  COMMENT '用户id',
+    `rank` FLOAT(3,2) 
+);
 ```
