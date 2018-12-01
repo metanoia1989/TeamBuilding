@@ -320,3 +320,128 @@ class Api(restful.Api):
         }
 ```
 
+
+# flask cli
+- [Migrating from Flask-Script to the New Flask CLI](https://blog.miguelgrinberg.com/post/migrating-from-flask-script-to-the-new-flask-cli)
+- [是时候从 Flask-Script 迁移到 Flask CLI了](https://zhuanlan.zhihu.com/p/30280143)
+
+Python 虚拟环境下终端运行 flask 
+```shell
+# windows
+> set FLASK_APP=hello.py
+> set FLASK_ENV=development
+> flask run
+# linux
+$ export FLASK_APP=hello.py
+$ export FLASK_ENV=development
+$ flask run 
+
+Options:
+  --version  Show the flask version
+  --help     Show this message and exit.
+Commands:
+  routes  Show the routes for the app.
+  run     Runs a development server. # 运行服务器 等同于 ./manage.py runserver
+  shell   Runs a shell in the app context. # 等同于 ./manage.py shell
+```
+
+自动导入类到shell context，使用 `@app.shell_context_processor` 装饰器
+```python
+import os
+from app import create_app, db
+from app.models import User, Follow, Role, Permission, Post, Comment
+
+app = create_app(os.getenv('FLASK_CONFIG') or 'default')
+
+@app.shell_context_processor
+def make_shell_context():
+    return dict(app=app, db=db, User=User, Follow=Follow, Role=Role,
+                Permission=Permission, Post=Post, Comment=Comment)
+```
+
+原来的 flask-script 的导入类到shell上下文的方法：
+```python
+def make_shell_context():
+    return dict(app=app, db=db, User=User, Follow=Follow, Role=Role,
+                Permission=Permission, Post=Post, Comment=Comment)
+manager.add_command("shell", Shell(make_context=make_shell_context))
+```
+
+**继承 flask-migrate**
+```python
+from flask_migrate import Migrate
+migrate = Migrate(app, db)
+```
+
+**添加自定义命令**
+```python
+import click
+@app.cli.command()
+@click.option('--coverage/--no-coverage', default=False, help='Enable code coverage')
+def test(coverage):
+    """Run the unit tests."""
+    # ...
+```
+
+##  `<flask.cli.ScriptInfo object at 0x00BD29B0>`
+报错问题，以及找不到导入文件问题，都是没有设置 FLASK_APP 指定启动文件导致的
+
+
+# python 引入上级目录的文件
+- [python 怎么引入上上级目录的文件啊？](https://www.v2ex.com/t/163653)
+- [Python的import陷阱](https://pyliaorachel.github.io/blog/tech/python/2017/09/15/pythons-import-trap.html)
+- [How do I find out my python path using python? ](https://stackoverflow.com/questions/1489599/how-do-i-find-out-my-python-path-using-python)
+
+引入上级文件报错 `ValueError: attempted relative import beyond top-level package`       
+
+如果不是从根目录启动的话，没有办法使用相对引用。    
+相对引用的语法：`.` 当前目录， `..`上级目录， `...`上上上级目录     
+
+解决办法，将要引用的文件所在目录加入 `PYTHONPATH`:
+```python
+import sys
+sys.path.append("..")
+```
+
+這邊-m是為了讓Python先import你要的package或module給你，然後再執行script。       
+
+
+# Assign Value if None Exists
+- [Assign Value if None Exists](https://stackoverflow.com/questions/7338501/python-assign-value-if-none-exists)
+
+```python
+var1 = None
+if var1 is None:
+    var1 = 4
+# 简化为
+var1 = 4 if var1 is None else var1
+var1 = var1 or 4
+```
+
+# Pipenv Locking updating is so slow
+- [pipenv install too slow](https://blog.csdn.net/jaket5219999/article/details/80265941)
+- [Package locking is crazy slow for scikit-learn](https://github.com/pypa/pipenv/issues/1785)
+
+npm and yarn have the advantage of not having to fully download and execute each prospective package to determine their dependency graph because the dependencies are specified in plaintext. Python dependencies require us to fully download and execute the setup files of each package to resolve and compute. That's just the reality, it's a bit slow. If you can't wait 2 minutes or you feel it's not worth the tradeoff, you can always pass --skip-lock.      
+
+不像npm等依赖管理工具（依赖通过纯文本定义），对于Python包，如果你要获取详细的依赖情况，需要下载安装包并执行setup.py文件，所以会耗费一定时间。通常来说，更换PyPI源已经可以大幅提升速度。如果你仍然不想等待生成Pipfile.lock的时间，那么可以在执行pipenv install命令时添加--skip-lock选项来跳过lock步骤，最后使用pipenv lock命令来统一执行lock操作。       
+
+安装时用：pipenv install --skip-lock python-package,  等到要部署或git push时再运行pipenv lock生成Pipfile.lock文件       
+
+# SQLAlchemy ImportError: No module named MySQLdb
+- [ImportError: No module named MySQLdb](https://stackoverflow.com/questions/22252397/importerror-no-module-named-mysqldb)
+- [Python 3 下使用 Flask-SQLAlchemy + MySQL](http://mookrs.com/flask-sqlalchemy-mysql-python-3/)
+ 
+
+python3 没有 MySQLdb，可以使用 `PyMySQL`
+```python
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://.....'
+```
+
+
+# 虚拟数据生成库
+- [利用ForgeryPy生成虚拟数据](https://blog.csdn.net/kikaylee/article/details/54906251)
+- [Python的伪造数据生成器:Faker](https://www.jianshu.com/p/20e41fc65dc8)
+- [Fake data的使用和产生 - Python篇](https://www.jianshu.com/p/60ae91b29def)
+
+Faker, ForgeryPy

@@ -24,6 +24,9 @@ class User(db.Model):
     last_seen = db.Column(db.DateTime(), default=datetime.utcnow) # 最后访问日期
     avatar_hash = db.Column(db.String(32)) # 头像
 
+    # 关联
+    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
+    resources = db.relationship('Resource', backref='author', lazy='dynamic')
 
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)
@@ -128,3 +131,83 @@ class User(db.Model):
         except:
             return None
         return User.query.get(data['id'])
+
+class Role(db.Model):
+    """ 角色模型 """
+    __tablename__ = 'roles'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique=True, nullable=False)
+    code = db.Column(db.String(64), unique=True)
+    permissions = db.Column(db.String(255) )
+    default = db.Column(db.Boolean, default=False, index=True)
+
+class Permission(db.Model):
+    """ 权限模型 """
+    __tablename__ = 'permissions'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique=True, nullable=False)
+    code = db.Column(db.String(64), unique=True)
+
+class Category(db.Model):
+    """ 标签模型 """
+    __tablename__ = 'category'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique=True, nullable=False)
+    resources = db.relationship('Resource', backref='resource', lazy='dynamic')
+
+class Resource(db.Model):
+    """ 资源模型 """
+    __tablename__ = 'resources'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(64), nullable=False)
+    body_md = db.Column(db.Text)
+    body_html = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    pin = db.Column(db.Integer, default=False)
+    hot = db.Column(db.Integer, default=False)
+    clicks = db.Column(db.Integer, default=False)
+    author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
+
+class Like(db.Model):
+    """ 点赞模型 """
+    __tablename__ = 'likes'
+    id = db.Column(db.Integer, primary_key=True)
+    like = db.Column(db.Integer, default=False)
+    unlike = db.Column(db.Integer, default=False)
+    author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    source_id = db.Column(db.Integer, db.ForeignKey('resources.id'))
+
+class Link(db.Model):
+    """ 链接模型 """
+    __tablename__ = 'links'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), nullable=False)
+    link = db.Column(db.String(1000), nullable=False)
+    md5 = db.Column(db.String(32), nullable=False)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    type_id = db.Column(db.Integer, db.ForeignKey('media_type.id'))
+
+class MediaType(db.Model):
+    """ 资源类型模型 """
+    __tablename__ = 'media_type'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), nullable=False)
+    links = db.relationship('Link', backref='link', lazy='dynamic')
+
+class Project(db.Model):
+    """ 资源专题模型 """
+    __tablename__ = 'projects'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    cover = db.Column(db.String(2083))
+    slug = db.Column(db.String(100), default='')
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    resources = db.relationship('Resource', backref='project', lazy='dynamic')
+
+class ProjectResource(db.Model):
+    """ 专题资源关联模型 """
+    __tablename__ = 'project_resources'
+    project_id = db.Column(db.Integer, db.ForeignKey('projects.id'), primary_key=True)
+    resource_id = db.Column(db.Integer, db.ForeignKey('resources.id'), primary_key=True)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)

@@ -54,7 +54,10 @@ flask web 开发一书里的登录认证是由 flask_login 的 login_user 实现
 开发计划表  网站的问题反馈，后期的规划发展，TODO等等             
 
 以专题为主，资源标签作为识别辅助    
+= =  我就想写个小小的网站，居然也要创建这么多数据表，真是疯了。     
+所有创建的表统计: user, permission, role, category, resources, rank, links, media_type, project, project_resources      
 ```sql
+数据库名 resource
 # 用户表
 CREATE TABLE IF NOT EXISTS `user` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
@@ -70,6 +73,7 @@ CREATE TABLE IF NOT EXISTS `user` (
     `avatar_hash` VARCHAR(32) COMMENT '头像',
     `confirmed` TINYINT(1) DEFAULT 0,
     INDEX `index_username` (`username`),
+    FOREIGN KEY (role_id) REFERENCES `role`(id) ON DELETE CASCADE ON UPDATE CASCADE,
 ) 
 ENGINE=InnoDB 
 DEFAULT CHARSET=utf8mb4 
@@ -93,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `category` (
     `name` VARCHAR(64) NOT NULL UNIQUE COMMENT '标签名',
 );
 # 内容表
-CREATE TABLE IF NOT EXISTS `sources` (
+CREATE TABLE IF NOT EXISTS `resources` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
     `title` VARCHAR(64) NOT NULL COMMENT '资源名',
     `content_md` TEXT COMMENT '资源内容 markdown纯文本',
@@ -101,7 +105,51 @@ CREATE TABLE IF NOT EXISTS `sources` (
     `timestamp` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '添加时间',
     `pin` TINYINT(1) DEFAULT 0 COMMENT '置顶',
     `hot` TINYINT(1) DEFAULT 0 COMMENT '加精',
+    `clicks` INT DEFAULT 0 COMMENT '点击量',
+    `status` TINYINT(1) DEFAULT 1 ,
     `author_id` INT  COMMENT '用户id',
-    `rank` FLOAT(3,2) 
+    `cid` INT  COMMENT '分类id',
+    FOREIGN KEY (author_id) REFERENCES `user`(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (cid) REFERENCES `category`(id) ON DELETE SET NULL ON UPDATE CASCADE,
+);
+# 点赞表
+CREATE TABLE IF NOT EXISTS `likes` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `like` TINYINT(1) DEFAULT 0 '点赞',
+    `unlike` TINYINT(1) DEFAULT 0 COMMENT '踩',
+    `author_id` INT COMMENT '点赞用户',
+    `source_id` INT COMMENT '内容id',
+    FOREIGN KEY (source_id) REFERENCES `sources`(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (author_id) REFERENCES `user`(id) ON DELETE SET NULL ON UPDATE CASCADE,
+);
+# 资源链接表
+CREATE TABLE IF NOT EXISTS `links` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(255) COMMENT '资源名',
+    `link` VARCHAR(1000) COMMENT '超链接',
+    `tid` INT COMMENT '媒体类型',
+    `md5` VARCHAR(32) '资源hash值',
+    `add_time` DATETIME COMMENT '添加时间',
+    FOREIGN KEY (tid) REFERENCES `media_type`(id) ON DELETE SET NULL ON UPDATE CASCADE,
+);
+# 资源媒体类别
+CREATE TABLE IF NOT EXISTS `media_type` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(64) COMMENT '媒体类型名',
+);
+# 专题收集表
+CREATE TABLE IF NOT EXISTS `project` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(255) COMMENT '专题名',
+    `cover` VARCHAR(2083) COMMENT '专题封面',
+    `slug` VARCHAR(100) COMMENT '专题url后缀',
+    `add_time` DATETIME COMMENT '添加时间',
+);
+# 专题资源关联表
+CREATE TABLE IF NOT EXISTS `project_resources`(
+    `pid` INT COMMENT '专题id',
+    `rid` INT COMMENT '资源id',
+    FOREIGN KEY (rid) REFERENCES `resources`(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (pid) REFERENCES `project`(id) ON DELETE SET NULL ON UPDATE CASCADE,
 );
 ```
