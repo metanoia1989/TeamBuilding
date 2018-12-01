@@ -438,10 +438,3 @@ python3 没有 MySQLdb，可以使用 `PyMySQL`
 SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://.....'
 ```
 
-
-# 虚拟数据生成库
-- [利用ForgeryPy生成虚拟数据](https://blog.csdn.net/kikaylee/article/details/54906251)
-- [Python的伪造数据生成器:Faker](https://www.jianshu.com/p/20e41fc65dc8)
-- [Fake data的使用和产生 - Python篇](https://www.jianshu.com/p/60ae91b29def)
-
-Faker, ForgeryPy
