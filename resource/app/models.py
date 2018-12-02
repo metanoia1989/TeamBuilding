@@ -137,16 +137,53 @@ class Role(db.Model):
     __tablename__ = 'roles'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True, nullable=False)
-    code = db.Column(db.String(64), unique=True)
     permissions = db.Column(db.String(255) )
     default = db.Column(db.Boolean, default=False, index=True)
+
+    @staticmethod
+    def insert_roles():
+        roles = {
+            'User': [],
+            'Moderator': [],
+            'Administrator': []
+        }
+        default_role = 'User'
+        for r in roles:
+            role = Role.query.filter_by(name=r).first()
+            if role is None:
+                role = Role(name=r)
+            role.reset_permissions()
+            for perm in roles[r]:
+                role.add_permission(perm)
+            role.default = (role.name == default_role)
+            db.session.add(role)
+        db.session.commit()
+
+    def add_permission(self, perm):
+        if not self.has_permission(perm):
+            self.permissions += perm
+
+    def remove_permission(self, perm):
+        if self.has_permission(perm):
+            self.permissions -= perm
+
+    def reset_permissions(self):
+        self.permissions = 0
+
+    def has_permission(self, perm):
+        return self.permissions & perm == perm
+
+    def __repr__(self):
+        return '<Role %r>' % self.name
 
 class Permission(db.Model):
     """ 权限模型 """
     __tablename__ = 'permissions'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True, nullable=False)
-    code = db.Column(db.String(64), unique=True)
+
+    def __repr__(self):
+        return '<Permission %r>' % self.name
 
 class Category(db.Model):
     """ 标签模型 """
@@ -154,6 +191,9 @@ class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True, nullable=False)
     resources = db.relationship('Resource', backref='resource', lazy='dynamic')
+
+    def __repr__(self):
+        return '<Category %r>' % self.name
 
 class Resource(db.Model):
     """ 资源模型 """
@@ -169,6 +209,9 @@ class Resource(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
 
+    def __repr__(self):
+        return '<Resource %r>' % self.title
+
 class Like(db.Model):
     """ 点赞模型 """
     __tablename__ = 'likes'
@@ -177,6 +220,9 @@ class Like(db.Model):
     unlike = db.Column(db.Integer, default=False)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     source_id = db.Column(db.Integer, db.ForeignKey('resources.id'))
+
+    def __repr__(self):
+        return '<Like %r>' % self.id
 
 class Link(db.Model):
     """ 链接模型 """
@@ -188,12 +234,18 @@ class Link(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     type_id = db.Column(db.Integer, db.ForeignKey('media_type.id'))
 
+    def __repr__(self):
+        return '<Link %r>' % self.name
+
 class MediaType(db.Model):
     """ 资源类型模型 """
     __tablename__ = 'media_type'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), nullable=False)
     links = db.relationship('Link', backref='link', lazy='dynamic')
+
+    def __repr__(self):
+        return '<MediaType %r>' % self.name
 
 class Project(db.Model):
     """ 资源专题模型 """
@@ -205,9 +257,13 @@ class Project(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     resources = db.relationship('Resource', backref='project', lazy='dynamic')
 
+    def __repr__(self):
+        return '<Project %r>' % self.name
+
 class ProjectResource(db.Model):
     """ 专题资源关联模型 """
     __tablename__ = 'project_resources'
     project_id = db.Column(db.Integer, db.ForeignKey('projects.id'), primary_key=True)
     resource_id = db.Column(db.Integer, db.ForeignKey('resources.id'), primary_key=True)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+

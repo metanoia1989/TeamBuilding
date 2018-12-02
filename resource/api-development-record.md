@@ -20,6 +20,24 @@ Flask的模块化分配给了Blueprint 实现了，创建模块专属后缀，�
 - [RESTful Authentication with Flask](https://blog.miguelgrinberg.com/post/restful-authentication-with-flask)
 
 
+# API权限管理设计
+- [flask 角色权限控制](https://www.jianshu.com/p/79d658e83157)
+- [自建装饰器实现权限控制](https://liqiang.io/book/chapter006/) 也是用位操作实现的权限验证
+- [Flask 用户权限划分](https://hui.lu/yong-hu-shu-ju-ku-biao-jie-gou-hua-fen/)
+- [Flask Restful API权限管理设计与实现](https://www.jianshu.com/p/b78744bd463b)
+
+
+flask web开发的权限是直接用数字表示，添加权限直接加一个数，移除权限直接减一个数，判断是否有某个权限，怎么弄？
+
+= = 位与操作，卧槽，好高端。。。。          
+
+User 模型中添加的 can() 方法在请求和赋予角色这两种权限之间进行位与操作。如果角色中包含请求的所有权限位，则返回 True ，表示允许用户执行此项操作。    
+```python
+def can(self, permissions):
+    return self.role is not None and \
+        (self.role.permissions & permissions) == permissions
+```
+
 # 登录以及权限验证
 登录本身就代表权限划分的一种，未登录和登录能看到的内容是不一样的，登录用户又根据身份，进行权限的进一步的细分。  
 flask 只提供了框架的基础，请求、响应、上下文，其他的都交给开发者自己实现。      
@@ -27,6 +45,7 @@ flask 只提供了框架的基础，请求、响应、上下文，其他的都�
 flask web 开发一书里的登录认证是由 flask_login 的 login_user 实现的。   
 
 用户会话管理和登录验证，那么对于HTTP请求上的认证，比如Restful API请求的认证要怎么做呢？因为Restful API不保存状态，无法依赖Cookie及Session来保存用户信息，自然也无法使用Flask-Login扩展来实现用户认证。  
+
 
 # TODO
 1. 创建数据表及相关模型，并且填充数据  

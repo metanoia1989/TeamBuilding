@@ -1,8 +1,8 @@
-"""添加各个表
+"""家里的环境 创建各个表
 
-Revision ID: 6d835e9a22f9
-Revises: 1cec1875e684
-Create Date: 2018-12-01 15:15:17.021759
+Revision ID: 85a4a38712bc
+Revises: 
+Create Date: 2018-12-02 01:12:14.144841
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '6d835e9a22f9'
-down_revision = '1cec1875e684'
+revision = '85a4a38712bc'
+down_revision = None
 branch_labels = None
 depends_on = None
 
