@@ -25,7 +25,9 @@ Flask的模块化分配给了Blueprint 实现了，创建模块专属后缀，�
 - [自建装饰器实现权限控制](https://liqiang.io/book/chapter006/) 也是用位操作实现的权限验证
 - [Flask 用户权限划分](https://hui.lu/yong-hu-shu-ju-ku-biao-jie-gou-hua-fen/)
 - [Flask Restful API权限管理设计与实现](https://www.jianshu.com/p/b78744bd463b)
-
+- [Flask-用户角色及权限](https://www.cnblogs.com/liushaocong/p/7426811.html)
+- [flask 角色验证中位操作求解？](https://www.zhihu.com/question/50986481)
+- [flask 角色验证中位操作求解](https://segmentfault.com/q/1010000005094754/a-1020000005099826)
 
 flask web开发的权限是直接用数字表示，添加权限直接加一个数，移除权限直接减一个数，判断是否有某个权限，怎么弄？
 
@@ -35,8 +37,30 @@ User 模型中添加的 can() 方法在请求和赋予角色这两种权限之�
 ```python
 def can(self, permissions):
     return self.role is not None and \
-        (self.role.permissions & permissions) == permissions
+           (self.role.permissions & permissions) == permissions
+
+def is_administrator(self):
+    return self.can(Permission.ADMINISTER)
 ```
+
+位操作：程序中的所有数在计算机内存中都是以二进制的形式存储的。位运算说穿了，就是直接对整数在内存中的二进制位进行操作。而`与`操作呢，就是有对应的两个二进位均为1时，结果位才为1，否则为0。       
+
+**权限与角色二进制表示**
+```python
+# 程序的权限
+FOLLOW 　　　　　　　　关注用户 　　　　　　       0x01
+COMMET 　　　　　　　　在他人文章中发表评论　　0x02
+WRITE_ARTICLES 　　　　写文章　　　　　　　　　0x04
+MODERATE_COMMENTS    管理他人发表的评论　　　0x08
+ADMINISTER 　　　　　　　管理员权限　　　　　　　0x80
+# 用户角色
+匿名　　　　　　　　0x00　　　　　　未登录的用户，在程序中只有阅读权限
+用户　　　　　　　　0x07　　　　　　具有发表文章，发表评论和关注其他用户的权限。这是新用户的默认角色
+协管员　　　　　　　0x0f　　　　　　 增加审查不当评论的权限
+管理员　　　　　　　0xff　　　　　　　具有所有权限,包括修改其他用户所属角色的权限
+```
+这种只适合8位吧，还是更多？如果权限很多的话，就不适用了，小型的、简单的系统没问题，不适合扩展。         
+
 
 # 登录以及权限验证
 登录本身就代表权限划分的一种，未登录和登录能看到的内容是不一样的，登录用户又根据身份，进行权限的进一步的细分。  
