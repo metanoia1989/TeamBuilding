@@ -18,16 +18,24 @@ Flask的模块化分配给了Blueprint 实现了，创建模块专属后缀，�
 - [Flask扩展系列(三)–国际化I18N和本地化L10N](http://www.bjhee.com/flask-ext3.html) Flask-Babel扩展
 - [Flask扩展系列–自定义扩展](http://www.bjhee.com/flask-ext.html) 
 - [RESTful Authentication with Flask](https://blog.miguelgrinberg.com/post/restful-authentication-with-flask)
-
+- [Flask RESTful API 开发----基础篇 (2)](https://blog.igevin.info/posts/flask-rest-basic-2/)
+- [慕课网-Python Flask构建可扩展的RESTful API-笔记](https://github.com/MarkGao11520/python-flask-restful-api-book)
 
 # API权限管理设计
 - [flask 角色权限控制](https://www.jianshu.com/p/79d658e83157)
 - [自建装饰器实现权限控制](https://liqiang.io/book/chapter006/) 也是用位操作实现的权限验证
 - [Flask 用户权限划分](https://hui.lu/yong-hu-shu-ju-ku-biao-jie-gou-hua-fen/)
+- [Flask 用户权限划分](http://ju.outofmemory.cn/entry/255720) 同上，但是排版更好，以view作为最小粒度。我要的是以资源的操作为最小粒度。  
 - [Flask Restful API权限管理设计与实现](https://www.jianshu.com/p/b78744bd463b)
 - [Flask-用户角色及权限](https://www.cnblogs.com/liushaocong/p/7426811.html)
 - [flask 角色验证中位操作求解？](https://www.zhihu.com/question/50986481)
 - [flask 角色验证中位操作求解](https://segmentfault.com/q/1010000005094754/a-1020000005099826)
+- [Flask-RBAC](https://github.com/shonenada/flask-rbac) flask rbac扩展，只有两个文件，代码很简单，可以参考实现原理
+- [Django权限机制的实现](https://www.jianshu.com/p/01126437e8a4) 没仔细看，也可以参考实现
+- [flask 应该怎么保护后端 api 接口，为接口增加权限机制？](https://www.v2ex.com/t/366237) 下面的回复很实用
+- [flask restful api权限管理方案](https://github.com/MarkGao11520/python-flask-restful-api-book/blob/master/7.%20%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/7.2%20%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88.md)
+- [自建装饰器实现权限控制 - Flask 入门](https://www.bookstack.cn/read/the-way-to-flask/book-docs-chapter006.md)
+- [基于RESTful API 怎么设计用户权限控制？](https://segmentfault.com/a/1190000004627946)
 
 flask web开发的权限是直接用数字表示，添加权限直接加一个数，移除权限直接减一个数，判断是否有某个权限，怎么弄？
 
@@ -59,7 +67,11 @@ ADMINISTER 　　　　　　　管理员权限　　　　　　　0x80
 协管员　　　　　　　0x0f　　　　　　 增加审查不当评论的权限
 管理员　　　　　　　0xff　　　　　　　具有所有权限,包括修改其他用户所属角色的权限
 ```
-这种只适合8位吧，还是更多？如果权限很多的话，就不适用了，小型的、简单的系统没问题，不适合扩展。         
+这种只适合8位吧，还是更多？如果权限很多的话，就不适用了，小型的、简单的系统没问题，不适合扩展。       
+
+## flask-restaction
+- [flask-restaction相对于flask-restful有什么优势，或是什么特性?](https://github.com/guyskk/flask-restaction/issues/2)
+restaction 的身份验证基于 jwt( json web token), 用一个 json 文件配置各个角色的权限  
 
 
 # 登录以及权限验证
