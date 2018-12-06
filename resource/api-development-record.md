@@ -137,14 +137,21 @@ COLLATE=utf8mb4_unicode_ci;
 CREATE TABLE IF NOT EXISTS `permission` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(64) COMMENT '权限名',
-    `code` VARCHAR(64) NOT NULL UNIQUE COMMENT '权限英文名',
+    `sources` VARCHAR(64) COMMENT '资源名',  # 数据库中的数据表就是资源，表名就是资源名
+    `action` VARCHAR(64) COMMENT '动作',  # all, add, delete, update, query
 );
 # 角色表
 CREATE TABLE IF NOT EXISTS `role` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(64) COMMENT '角色名',
-    `code` VARCHAR(64) NOT NULL UNIQUE COMMENT '角色英文名',
     `default` TINYINT(1) DEFAULT 0 COMMENT '用户默认角色',
+);
+# 角色权限关联表
+CREATE TABLE IF NOT EXISTS `role_permission` (
+    `role_id` INT COMMENT '角色id',
+    `permission_id` INT COMMENT '权限id',
+    FOREIGN KEY (role_id) REFERENCES `role`(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (permission) REFERENCES `permission`(id) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 # 标签表
 CREATE TABLE IF NOT EXISTS `category` (
@@ -152,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `category` (
     `name` VARCHAR(64) NOT NULL UNIQUE COMMENT '标签名',
 );
 # 内容表
-CREATE TABLE IF NOT EXISTS `resources` (
+CREATE TABLE IF NOT EXISTS `resource` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
     `title` VARCHAR(64) NOT NULL COMMENT '资源名',
     `content_md` TEXT COMMENT '资源内容 markdown纯文本',
@@ -174,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `likes` (
     `unlike` TINYINT(1) DEFAULT 0 COMMENT '踩',
     `author_id` INT COMMENT '点赞用户',
     `source_id` INT COMMENT '内容id',
-    FOREIGN KEY (source_id) REFERENCES `sources`(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (source_id) REFERENCES `resource`(id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (author_id) REFERENCES `user`(id) ON DELETE SET NULL ON UPDATE CASCADE,
 );
 # 资源链接表
@@ -201,10 +208,13 @@ CREATE TABLE IF NOT EXISTS `project` (
     `add_time` DATETIME COMMENT '添加时间',
 );
 # 专题资源关联表
-CREATE TABLE IF NOT EXISTS `project_resources`(
+CREATE TABLE IF NOT EXISTS `project_resource`(
     `pid` INT COMMENT '专题id',
     `rid` INT COMMENT '资源id',
-    FOREIGN KEY (rid) REFERENCES `resources`(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (rid) REFERENCES `resource`(id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (pid) REFERENCES `project`(id) ON DELETE SET NULL ON UPDATE CASCADE,
 );
 ```
+
+# Blueprint 是模块级别的路由拆分
+Blueprint 是模块级别的路由拆分，不适合拆分视图。    

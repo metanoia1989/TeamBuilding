@@ -17,7 +17,7 @@ migrate  = Migrate(app, db)
 # # 集成 Python shell
 @app.shell_context_processor
 def make_shell_context():
-    return dict(app=app, db=db)
+    return dict(app=app, db=db, Permission=Permission, Role=Role)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8888, debug=True)

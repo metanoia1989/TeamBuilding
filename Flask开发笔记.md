@@ -438,3 +438,11 @@ python3 没有 MySQLdb，可以使用 `PyMySQL`
 SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://.....'
 ```
 
+# SQLAlchemy 模型关联与数据表
+- [python-复盘-flask-数据库一对一／一对多／多对多关系](https://www.jianshu.com/p/5c0fe8b4c95c)
+  
+
+# 缓存问题
+- [Flask-Cache](https://wizardforcel.gitbooks.io/flask-extension-docs/content/flask-cache.html)
+  
+避免频繁地查询数据库，必须缓存所有权限、用户权限
