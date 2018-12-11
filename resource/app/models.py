@@ -137,7 +137,7 @@ class Role(db.Model):
     __tablename__ = 'role'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(64), unique=True, nullable=False, comment='角色名')
-    default = db.Column(db.Boolean, default=False, index=True, comment='是否为默认角色')
+    default = db.Column(db.Boolean, default=0, index=True, comment='是否为默认角色')
 
     @staticmethod
     def insert_roles():
@@ -202,10 +202,10 @@ class Permission(db.Model):
     def __repr__(self):
         return '<Permission %r>' % self.name
     
-class RolePermission(db.Model):
-    __tablename__ = 'role_permission'
-    role_id = db.Column(db.Integer, db.ForeignKey('role.id'), primary_key=True)
-    permission_id = db.Column(db.Integer, db.ForeignKey('permission.id'), primary_key=True)
+RolePermission =  db.Table('role_permission',
+    db.Column('role_id', db.Integer, db.ForeignKey('role.id')),
+    db.Column('permission_id', db.Integer, db.ForeignKey('permission.id')),
+)
 
 class Category(db.Model):
     """ 标签模型 """
@@ -264,7 +264,7 @@ class MediaType(db.Model):
     __tablename__ = 'media_type'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(64), nullable=False)
-    links = db.relationship('Link', backref='links', lazy='dynamic')
+    links = db.relationship('Link', backref='media_type', lazy='dynamic')
 
     def __repr__(self):
         return '<MediaType %r>' % self.name
@@ -281,10 +281,10 @@ class Project(db.Model):
     def __repr__(self):
         return '<Project %r>' % self.name
 
-class ProjectResource(db.Model):
-    """ 专题资源关联模型 """
-    __tablename__ = 'project_resource'
-    project_id = db.Column(db.Integer, db.ForeignKey('project.id'), primary_key=True)
-    resource_id = db.Column(db.Integer, db.ForeignKey('resource.id'), primary_key=True)
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 
+""" 专题资源关联模型 """
+ProjectResource = db.Table('project_resource',
+    db.Column('project_id', db.Integer, db.ForeignKey('project.id')),
+    db.Column('resource_id', db.Integer, db.ForeignKey('resource.id')),
+    db.Column('create_time' ,db.DateTime, default=datetime.utcnow)
+)
