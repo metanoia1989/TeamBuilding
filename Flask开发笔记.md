@@ -438,6 +438,18 @@ python3 没有 MySQLdb，可以使用 `PyMySQL`
 SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://.....'
 ```
 
+# sqlalchemy typeerror 'table' object is not callable
+```python
+""" 专题资源关联模型 """
+ProjectResource = db.Table('project_resource',
+    db.Column('project_id', db.Integer, db.ForeignKey('project.id')),
+    db.Column('resource_id', db.Integer, db.ForeignKey('resource.id')),
+    db.Column('create_time' ,db.DateTime, default=datetime.utcnow)
+)
+```
+
+使用 Table 这种关联两张表，好像是由 SQLAlchemy 自动处理的，我要添加数据怎么办？
+
 # SQLAlchemy 模型关联与数据表
 - [python-复盘-flask-数据库一对一／一对多／多对多关系](https://www.jianshu.com/p/5c0fe8b4c95c)
   
@@ -446,3 +458,4 @@ SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://.....'
 - [Flask-Cache](https://wizardforcel.gitbooks.io/flask-extension-docs/content/flask-cache.html)
   
 避免频繁地查询数据库，必须缓存所有权限、用户权限
+

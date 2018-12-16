@@ -132,12 +132,19 @@ class User(db.Model):
             return None
         return User.query.get(data['id'])
 
+""" 角色权限表 """
+RolePermission = db.Table('role_permission',
+    db.Column('role_id', db.Integer, db.ForeignKey('role.id')),
+    db.Column('permission_id', db.Integer, db.ForeignKey('permission.id')),
+)
+
 class Role(db.Model):
     """ 角色模型 """
     __tablename__ = 'role'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(64), unique=True, nullable=False, comment='角色名')
     default = db.Column(db.Boolean, default=0, index=True, comment='是否为默认角色')
+    permissions = db.relationship('Permission', secondary=RolePermission, lazy='dynamic')
 
     @staticmethod
     def insert_roles():
@@ -178,34 +185,8 @@ class Permission(db.Model):
     sources = db.Column(db.String(64), nullable=False, comment='资源名 与数据表对应')
     action = db.Column(db.String(64), nullable=False, comment='动作 all, add, update, delete, query')
 
-    @staticmethod
-    def insert_permissions():
-        permissions = {
-            '用户管理': { 'sources': 'user', 'action': 'all' },
-            '权限管理': { 'sources': 'permission', 'action': 'all'},
-            '角色管理': { 'sources': 'role', 'action': 'all' },
-            '专题管理': { 'sources': 'project', 'action': 'all' },
-            '资源管理': { 'sources': 'resource', 'action': 'all' },
-            '资源标签管理': { 'sources': 'category', 'action': 'all' },
-            '媒体类型管理': { 'sources': 'media_type', 'action': 'all'},
-        }
-        for p in permissions:
-            permission = Permission.query.filter_by(name=p).first()
-            if permission is None:
-                permission = Permission(name=p)
-            permission.sources = permissions[p]['sources']
-            permission.action = permissions[p]['action']
-            db.session.add(role)
-        db.session.commit()
-
-
     def __repr__(self):
         return '<Permission %r>' % self.name
-    
-RolePermission =  db.Table('role_permission',
-    db.Column('role_id', db.Integer, db.ForeignKey('role.id')),
-    db.Column('permission_id', db.Integer, db.ForeignKey('permission.id')),
-)
 
 class Category(db.Model):
     """ 标签模型 """
@@ -269,6 +250,13 @@ class MediaType(db.Model):
     def __repr__(self):
         return '<MediaType %r>' % self.name
 
+""" 专题资源关联模型 """
+ProjectResource = db.Table('project_resource',
+    db.Column('project_id', db.Integer, db.ForeignKey('project.id')),
+    db.Column('resource_id', db.Integer, db.ForeignKey('resource.id')),
+    db.Column('create_time' ,db.DateTime, default=datetime.utcnow)
+)
+
 class Project(db.Model):
     """ 资源专题模型 """
     __tablename__ = 'project'
@@ -277,14 +265,9 @@ class Project(db.Model):
     cover = db.Column(db.String(2083))
     slug = db.Column(db.String(100), default='')
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    resources = db.relationship('Resource', secondary=ProjectResource, 
+                                backref=db.backref('projects', lazy='dynamic'), lazy='dynamic')
 
     def __repr__(self):
         return '<Project %r>' % self.name
 
-
-""" 专题资源关联模型 """
-ProjectResource = db.Table('project_resource',
-    db.Column('project_id', db.Integer, db.ForeignKey('project.id')),
-    db.Column('resource_id', db.Integer, db.ForeignKey('resource.id')),
-    db.Column('create_time' ,db.DateTime, default=datetime.utcnow)
-)

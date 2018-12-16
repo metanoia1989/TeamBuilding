@@ -99,7 +99,21 @@ class FakerData():
 
     @staticmethod
     def assign_permission():
-        """为角色分配权限"""
+        """
+        为角色分配权限
+        webmaster 站长 所有权限
+        admin 版主 资源管理，标签管理，专题管理
+        user 普通用户 没有权限 - 只能管理自己的资源
+        """
+        webmaster = Role.query.filter_by(name='站长').first()
+        admin = Role.query.filter_by(name='版主').first()
+        permissions = Permission.query.all()
+
+        webmaster.permissions = permissions
+        admin.permissions = [ p for p in permissions if p.sources in  ['Resource', 'Category', 'Project']]
+
+        db.session.add_all([webmaster, admin])
+        db.session.commit()
 
 
     @staticmethod
@@ -145,9 +159,32 @@ class FakerData():
     @staticmethod
     def make_project(num=100):
         """创建资源专题，以及专题对应的资源"""
-        pass
+        import os, os.path 
+        from slugify import slugify
+        imgs_dir = os.path.abspath(os.path.dirname(__file__) + os.path.sep + 'static/img')
+        imgs_path = os.listdir(imgs_dir)
+        imgs_path = [ 'img' + os.path.sep + path for path in imgs_path]
+
+        for _ in range(num):
+            name = fake_zh.sentence(nb_words=6, variable_nb_words=True)
+            cover = random.choice(imgs_path)
+            name_slug = fake_en.sentence(nb_words=6, variable_nb_words=True)
+            slug = slugify(name_slug)
+            project = Project(name=name, cover=cover, slug=slug)
+            db.session.add(project)
+        db.session.commit()
+
+
 
     @staticmethod
-    def assign_resource(num=100):
+    def assign_resource():
         """分配专题的相关资源"""
-        pass
+        resources = Resource.query.all()
+        projects = Project.query.all()
+
+        for project in projects:
+            project.resources = random.sample(resources, 10) 
+            db.session.add(project)
+        db.session.commit()
+
+
