@@ -7,6 +7,15 @@ Flask的模块化分配给了Blueprint 实现了，创建模块专属后缀，�
 
 记录遇到的这些问题，记录从中学习到的知识，这个项目能够让我成长，懂得怎么慢慢学习掌握陌生的知识，不会不要怕，有别人的讲解，有别人的示例，我可以先抄代码，然后慢慢熟悉理解。  
 
+# 开发规划
+- 创建模型
+- 创建虚拟数据
+- 登录验证 token
+- api创建
+- 异常处理 响应 json化
+- 权限验证
+- 编写单元测试
+
 # 相关资源和项目
 - [httpbin](https://httpbin.org) 测试request请求
 - [HTTP Request & Response Service, written in Python + Flask.](https://github.com/requests/httpbin)
@@ -75,12 +84,14 @@ restaction 的身份验证基于 jwt( json web token), 用一个 json 文件配�
 
 
 # 登录以及权限验证
+- [Flask 扩展 HTTP认证](https://www.cnblogs.com/Erick-L/p/7060806.html)
 登录本身就代表权限划分的一种，未登录和登录能看到的内容是不一样的，登录用户又根据身份，进行权限的进一步的细分。  
 flask 只提供了框架的基础，请求、响应、上下文，其他的都交给开发者自己实现。      
 
 flask web 开发一书里的登录认证是由 flask_login 的 login_user 实现的。   
 
 用户会话管理和登录验证，那么对于HTTP请求上的认证，比如Restful API请求的认证要怎么做呢？因为Restful API不保存状态，无法依赖Cookie及Session来保存用户信息，自然也无法使用Flask-Login扩展来实现用户认证。  
+
 
 
 # TODO

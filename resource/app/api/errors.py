@@ -2,8 +2,9 @@
 # -*- conding:utf8 -*-
 
 from flask import jsonify
-from . import api
+from . import api, auth
 from ..exceptions import ValidationError
+# from .authentication import auth
 
 def forbidden_error(message):
     response = jsonify({'error': 'forbidden', 'message': message})
@@ -15,7 +16,8 @@ def bad_request(message):
     response.status_code = 400
     return response
 
-def unauthorized(message):
+@auth.error_handler
+def unauthorized(message = 'not login'):
     response = jsonify({'error': 'unauthorized', 'message': message})
     response.status_code = 401
     return response
