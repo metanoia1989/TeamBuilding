@@ -6,6 +6,8 @@ verify_ssl = true
 [dev-packages]
 ipython = "*"
 faker = "*"
+flask-migrate = "*"
+python-slugify = "*"
 
 [packages]
 flask = "*"
@@ -15,9 +17,8 @@ werkzeug = "*"
 pyjwt = "*"
 flask-restplus = "*"
 itsdangerous = "*"
-flask-migrate = "*"
 pymysql = "*"
-python-slugify = "*"
+flask-restful = "*"
 
 [requires]
 python_version = "3.7"

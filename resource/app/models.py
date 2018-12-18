@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- conding:utf8 -*-
 
-from . import db
+from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from datetime import datetime
@@ -121,7 +121,7 @@ class User(db.Model):
     # 生成令牌 验证令牌
     def generate_auth_token(self, expiration):
         s = Serializer(current_app.config['SECRET_KEY'], expires_in=expiration)
-        return s.dumps({'id': self.id})
+        return s.dumps({'id': self.id}).decode('utf-8')
     
     @staticmethod
     def verify_auth_token(token):

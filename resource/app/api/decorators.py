@@ -3,7 +3,7 @@
 
 from functools import wraps
 from flask import g
-from .errors import forbidden_error
+from app.api.errors import forbidden_error
 
 def permission_required(permission):
     def decorator(f):

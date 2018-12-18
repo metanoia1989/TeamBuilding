@@ -229,3 +229,5 @@ CREATE TABLE IF NOT EXISTS `project_resource`(
 
 # Blueprint 是模块级别的路由拆分
 Blueprint 是模块级别的路由拆分，不适合拆分视图。    
+
+路由规划 刚开始不用写太多，就写几张表的增删改查就可以了，后期写app的时候，再进行完善

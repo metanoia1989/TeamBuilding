@@ -1,43 +1,37 @@
 #!/usr/bin/env python3
 # -*- conding:utf8 -*-
 
-from flask import g, jsonify
-from ..models import User
-from . import api, auth, tokens
-from .errors import forbidden_error, unauthorized
+from flask import g, jsonify, request
+from app.models import User
+from app.api import api, auth
+from app.api.errors import forbidden_error, unauthorized
 from werkzeug.security import generate_password_hash, check_password_hash
-
-
-
-users = [
-    { 'username': 'Tom', 'password': generate_password_hash('111111') },
-    { 'username': 'Michael', 'password': generate_password_hash('123456') },
-]
-
-# @auth.get_password
-# def get_password(username):
-#     for user in users:
-#         if user['username'] == username:
-#             return user['password']
-#     return None
-
-# @auth.verify_password
-# def verify_password(username, password):
-#     for user in users:
-#         if user['username'] == username:
-#             if check_password_hash(user['password'], generate_password_hash(password)):
-#                 return True
-#     return False
 
 @auth.verify_token
 def verify_token(token):
-    g.user = None
-    if token in tokens:
-        g.user = tokens[token]
-        return True
-    return False
+    g.current_user = User.verify_auth_token(token)
+    return g.current_user is not None
+
+@auth.error_handler
+def auth_error():
+    return unauthorized('Invalid credentials')
+
+
+@api.route('/tokens/', methods=['POST'])
+def get_token():
+    json = request.get_json()
+    email = json.get('email')
+    password = json.get('password')
+    if email == '' or password == '':
+        return False
+    user = User.query.filter_by(email=email).first()
+    if not user or not user.verify_password(password):
+        return False
+    g.current_user = user
+    token = g.current_user.generate_auth_token(expiration=3600)
+    return jsonify({ "token": token, "expiration": 3600 })
 
 @api.route('/')
 @auth.login_required
 def index():
-    return "Hello, %s!" % g.user
+    return jsonify({ 'username': g.current_user.username })
