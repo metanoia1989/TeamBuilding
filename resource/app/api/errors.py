@@ -2,7 +2,8 @@
 # -*- conding:utf8 -*-
 
 from flask import jsonify
-from app.api import api, auth
+from app.api import api_blueprint
+from app.extensions import auth
 from app.exceptions import ValidationError
 # from .authentication import auth
 
@@ -21,6 +22,6 @@ def unauthorized(message):
     response.status_code = 401
     return response
 
-@api.errorhandler(ValidationError)
+@api_blueprint.errorhandler(ValidationError)
 def validation_error(e):
     return bad_request(e.args[0])

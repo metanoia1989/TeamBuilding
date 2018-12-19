@@ -673,3 +673,70 @@ INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:04:43] "GET /api/ HTTP/1.1" 401 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:04:52] "GET /api/resources/ HTTP/1.1" 404 -
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/run.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:05:33] "GET /api/resources/ HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:05:34] "GET /api/resources/ HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:05:38] "GET /api/ HTTP/1.1" 401 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:06:15] "GET /api/ HTTP/1.1" 401 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:06:23] "GET /api/resources HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:06:26] "GET /api/resources/ HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:08:33] "GET /api/resources/ HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:08:38] "GET /api/resources HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:08:42] "GET /api/resources/1 HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:08:44] "GET /api/resources/1 HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:09:59] "GET /api/resources/ HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:10:01] "GET /api/resources/ HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 08:10:03] "GET /api/resources HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 10:56:04] "POST /api/tokens/ HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [19/Dec/2018 10:56:19] "GET /api/ HTTP/1.1" 200 -

@@ -2,9 +2,10 @@
 # -*- conding:utf8 -*-
 
 from flask import g, jsonify, request
-from app.models import User
-from app.api import api, auth
+from app.models.user import User
+from app.api import api_blueprint
 from app.api.errors import forbidden_error, unauthorized
+from app.extensions import auth
 from werkzeug.security import generate_password_hash, check_password_hash
 
 @auth.verify_token
@@ -17,7 +18,7 @@ def auth_error():
     return unauthorized('Invalid credentials')
 
 
-@api.route('/tokens/', methods=['POST'])
+@api_blueprint.route('/tokens/', methods=['POST'])
 def get_token():
     json = request.get_json()
     email = json.get('email')
@@ -31,7 +32,7 @@ def get_token():
     token = g.current_user.generate_auth_token(expiration=3600)
     return jsonify({ "token": token, "expiration": 3600 })
 
-@api.route('/')
+@api_blueprint.route('/')
 @auth.login_required
 def index():
     return jsonify({ 'username': g.current_user.username })

@@ -2,10 +2,13 @@
 # -*- conding:utf8 -*-
 
 from flask import Blueprint
-from flask_httpauth import HTTPTokenAuth, HTTPBasicAuth
+from flask_restful import Api
+from app.api.resource import Resource as ResourceModel
  
-api = Blueprint('api', __name__)
+# 初始化蓝图以及restful api扩展
+api_blueprint = Blueprint('api', __name__, url_prefix='/api')
+api = Api(api_blueprint)
 
-auth = HTTPTokenAuth(scheme='Bearer')
 
-from . import authentication, errors
+# 导入路由视图
+from . import authentication

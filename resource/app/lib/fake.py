@@ -2,12 +2,18 @@
 # -*- conding:utf8 -*-
 
 from faker import Factory
-from .models import (
-    User, Role, Permission, 
-    Resource, Category, Project, 
-    ProjectResource, Like, Link, MediaType
-)
-from . import db
+from app.models.user import User
+from app.models.role import Role
+from app.models.permission import Permission
+from app.models.resource import Resource
+from app.models.category import Category
+from app.models.project import Project
+from app.models.like import Like
+from app.models.link import Link
+from app.models.mediatype import MediaType
+from app.models.relationship import ProjectResource
+
+from app.extensions import db
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash
 import random
