@@ -3,8 +3,9 @@
 
 from app.extensions import db
 from datetime import datetime
+from app.models.base import CRUDMixin
 
-class Permission(db.Model):
+class Permission(CRUDMixin, db.Model):
     """ 权限模型 """
     __tablename__ = 'permission'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

@@ -2,8 +2,9 @@
 # -*- conding:utf8 -*-
 
 from app.extensions import db
+from app.models.base import CRUDMixin
 
-class Like(db.Model):
+class Like(CRUDMixin, db.Model):
     """ 点赞模型 """
     __tablename__ = 'likes'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

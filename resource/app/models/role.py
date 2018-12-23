@@ -4,8 +4,9 @@
 from app.extensions import db
 from app.models.relationship import RolePermission
 from datetime import datetime
+from app.models.base import CRUDMixin
 
-class Role(db.Model):
+class Role(CRUDMixin, db.Model):
     """ 角色模型 """
     __tablename__ = 'role'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

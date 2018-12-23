@@ -4,7 +4,7 @@
 from flask import g, jsonify, request
 from app.models.user import User
 from app.api import api_blueprint
-from app.api.errors import forbidden_error, unauthorized
+from app.lib.errors import forbidden_error, unauthorized, Success
 from app.extensions import auth
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -29,10 +29,16 @@ def get_token():
     if not user or not user.verify_password(password):
         return False
     g.current_user = user
-    token = g.current_user.generate_auth_token(expiration=3600)
-    return jsonify({ "token": token, "expiration": 3600 })
+    token = g.current_user.generate_auth_token(expiration=3600 * 24 )
+    return jsonify({ "token": token, "expiration": 3600 * 24 })
 
 @api_blueprint.route('/')
 @auth.login_required
 def index():
     return jsonify({ 'username': g.current_user.username })
+
+
+@api_blueprint.route('/test')
+@auth.login_required
+def test():
+    return Success()

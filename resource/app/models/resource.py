@@ -3,9 +3,10 @@
 
 from app.extensions import db
 from datetime import datetime
+from app.models.base import CRUDMixin
 
 
-class Resource(db.Model):
+class Resource(CRUDMixin, db.Model):
     """ 资源模型 """
     __tablename__ = 'resource'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

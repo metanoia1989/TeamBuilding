@@ -8,11 +8,17 @@ from app.models.user import User
 from app.models.role import Role
 from app.lib.fake import FakerData
 from config import config
-from logging import basicConfig, INFO
+from logging import basicConfig, INFO, info
 from os import getenv
+from datetime import date
+# import ptvsd
+
+# ptvsd.enable_attach(address=('0.0.0.0', 8899), redirect_output=True)
 
 app = create_app(getenv('FlASK_CONFIG') or 'default')
-basicConfig(filename='./log/resource.log', level=INFO)
+today_str = date.today().strftime('%Y-%m-%d')
+basicConfig(filename='./log/resource-' + today_str + '.log', level=INFO)
+
 
 # 集成 Python shell
 @app.shell_context_processor
@@ -21,4 +27,5 @@ def make_shell_context():
 
 
 if __name__ == '__main__':
+    # if(getenv('FLASK_DEBUG') == 1):
     app.run(host='0.0.0.0', port=8888, debug=True)

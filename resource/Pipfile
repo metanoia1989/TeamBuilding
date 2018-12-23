@@ -8,6 +8,7 @@ ipython = "*"
 faker = "*"
 flask-migrate = "*"
 python-slugify = "*"
+ptvsd = "*"
 
 [packages]
 flask = "*"
@@ -19,6 +20,7 @@ flask-restplus = "*"
 itsdangerous = "*"
 pymysql = "*"
 flask-restful = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"

@@ -4,8 +4,9 @@
 from app.extensions import db
 from app.models.relationship import ProjectResource
 from datetime import datetime
+from app.models.base import CRUDMixin
 
-class Project(db.Model):
+class Project(CRUDMixin, db.Model):
     """ 资源专题模型 """
     __tablename__ = 'project'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
