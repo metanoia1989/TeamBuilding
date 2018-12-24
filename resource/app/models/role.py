@@ -30,6 +30,12 @@ class Role(CRUDMixin, db.Model):
             db.session.add(role)
         db.session.commit()
 
+    @staticmethod
+    def get_role_ids():
+        role_ids = Role.query.filter(Role.confirmed==1).with_entities(Role.id).all()
+        role_ids = [ x[0] for x in role_ids ]
+        return role_ids
+
     def add_permission(self, perm):
         pass
 

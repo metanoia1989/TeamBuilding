@@ -4,59 +4,44 @@
 from flask import jsonify
 from app.api import api_blueprint
 from app.extensions import auth
-from app.exceptions import ValidationError, ApiException
+from app.exceptions import ValidationError
 # from .authentication import auth
-
-def forbidden_error(message):
-    response = jsonify({'error': 'forbidden', 'message': message})
-    response.status_code = 403
-    return response
-
-def bad_request(message):
-    response = jsonify({'error': 'bad request', 'message': message})
-    response.status_code = 400
-    return response
-
-def unauthorized(message):
-    response = jsonify({'error': 'unauthorized', 'message': message})
-    response.status_code = 401
-    return response
 
 @api_blueprint.errorhandler(ValidationError)
 def validation_error(e):
     return bad_request(e.args[0])
 
-class Success(ApiException):
-    code = 201
-    error_code = 0
-    msg = 'Create ok'
+def success(msg='ok'):
+    response = jsonify({'error_code': 0, 'msg': msg})
+    response.status_code = 201
+    return response
 
-class ExecuteSuccess(ApiException):
-    code = 204
-    error_code = 1
-    msg = 'Execute ok'
+def execute_success():
+    response = jsonify({'error_code': 1, 'msg': 'ok'})
+    response.status_code = 204
+    return response
 
-class ServerError(ApiException):
-    code = 500
-    error_code = 999
-    msg = 'Sorry, server has a mistake!'
+def server_error(msg='sorry, server has a mistake!'):
+    response = jsonify({'error_code': 999, 'msg': msg})
+    response.status_code = 500
+    return response
 
-class ParameterException(ApiException):
-    code = 400
-    error_code = 1000
-    msg = 'Invalid parameter'
+def bad_request(msg='invalid paramter'):
+    response = jsonify({'error_code': 1000, 'msg': msg})
+    response.status_code = 400
+    return response
 
-class NotFound(ApiException):
-    code = 404
-    error_code = 1001
-    msg = 'The resource are not found 0_0...'
+def unauthorized(msg='authorization faild'):
+    response = jsonify({'error_code': 1005, 'msg': msg})
+    response.status_code = 401
+    return response
 
-class AuthFailed(ApiException):
-    code = 401
-    error_code = 1005
-    msg = 'Authorization failed'
+def forbidden_error(msg='forbidden access'):
+    response = jsonify({'error_code': 1003, 'msg': msg})
+    response.status_code = 403
+    return response
 
-class Forbidden(ApiException):
-    code = 403
-    error_code = 1004
-    msg = 'Forbidden access'
+def not_found(msg='the resource are not found 0_0.'):
+    response = jsonify({'error_code': 1001, 'msg': msg})
+    response.status_code = 404
+    return response

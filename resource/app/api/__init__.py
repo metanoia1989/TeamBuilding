@@ -19,3 +19,4 @@ meta_fields = {
 # 导入路由视图
 from . import authentication
 from . import resources
+from . import user

@@ -4,7 +4,7 @@
 from flask import g, jsonify, request
 from app.models.user import User
 from app.api import api_blueprint
-from app.lib.errors import forbidden_error, unauthorized, Success
+from app.lib.errors import forbidden_error, unauthorized, success
 from app.extensions import auth
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -41,4 +41,4 @@ def index():
 @api_blueprint.route('/test')
 @auth.login_required
 def test():
-    return Success()
+    return success()

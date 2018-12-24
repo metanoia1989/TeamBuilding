@@ -19,7 +19,7 @@ class CRUDMixin:
         """Update specific fields of a record."""
         # Prevent changing ID of object
         kwargs.pop('id', None)
-        for attr, value in kwargs.iteritems():
+        for attr, value in kwargs.items():
             # Flask-RESTful makes everything None by default :/
             if value is not None:
                 setattr(self, attr, value)
