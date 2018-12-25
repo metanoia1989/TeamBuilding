@@ -7,8 +7,8 @@ from app.api import api, meta_fields
 from app.api.user import user_fields
 from app.api.category import category_fields
 from app.extensions import auth
-from app.models.resource import Resource as Resource_Model
-from app.models.user import User
+from app.models.resource import Resource as ResourceModel
+from app.models.user import User as UserModel
 from app.lib.decorators import paginate
 from app.lib.errors import success, execute_success
 
@@ -41,17 +41,22 @@ resource_collection_fields = {
     'meta': fields.Nested(meta_fields),
 }
 
-class Resource(Resource):
-    decorators = [auth.login_required]
+class ResourceApi(Resource):
+    method_decorators = {
+        'delete': [auth.login_required],
+        'post': [auth.login_required],
+        'put': [auth.login_required],
+    }
+
     @marshal_with(resource_fields)
     def get(self, id=None):
-        resource = Resource_Model.query.filter_by(id=id).first()
+        resource = ResourceModel.query.filter_by(id=id).first()
         if not resource:
             abort(404)
         return resource
     
     def delete(self, id=None):
-        resource = Resource_Model.query.filter_by(id=id).first()
+        resource = ResourceModel.query.filter_by(id=id).first()
         if not resource:
             abort(404)
         resource.delete()
@@ -61,30 +66,28 @@ class Resource(Resource):
         args = resource_parser.parse_args()
         # user owns the task
         args['author_id'] = g.current_user.id
-        resource = Resource_Model.create(**args)
+        resource = ResourceModel.create(**args)
         return success()
 
     def put(self, id=0, **kwargs):
-        resource = Resource_Model.query.filter_by(id=id).first()
+        resource = ResourceModel.query.filter_by(id=id).first()
         if not resource:
             abort(404)
         resource.update(**resource_parser.parse_args())
         return execute_success()
 
-class ResourceCollection(Resource):
-    decorators = [auth.login_required]
+class ResourceCollectionApi(Resource):
 
     @marshal_with(resource_collection_fields)
     @paginate(10)
     def get(self, user_id=None):
-        resources = Resource_Model.query
+        resources = ResourceModel.query
         if user_id:
-            user = User.query.filter_by(id=user_id).first()
+            user = UserModel.query.filter_by(id=user_id).first()
             if user is None:
                 abort(404)
-            resources = Resource_Model.query.filter_by(author_id=user.id) 
+            resources = ResourceModel.query.filter_by(author_id=user.id) 
         return resources
-
     
-api.add_resource(Resource, '/resource' ,'/resource/<int:id>', endpoint='resource')
-api.add_resource(ResourceCollection, '/resources' ,'/resources/<int:user_id>', endpoint='resources')
+api.add_resource(ResourceApi, '/resource' ,'/resource/<int:id>', endpoint='resource')
+api.add_resource(ResourceCollectionApi, '/resources' ,'/resources/<int:user_id>', endpoint='resources', methods=['GET'])

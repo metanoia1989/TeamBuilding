@@ -20,3 +20,4 @@ meta_fields = {
 from . import authentication
 from . import resources
 from . import user
+from . import project

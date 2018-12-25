@@ -1,0 +1,208 @@
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:01:30] "GET /api/resource/99 HTTP/1.1" 401 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:01:43] "POST /api/tokens/ HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:01:46] "POST /api/tokens/ HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:01:58] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:02:24] "GET /api/resource/99 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:02:36] "GET /api/resource/99 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:03:14] "GET /api/resource/99 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:03:18] "GET /api/resource/99 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:03:29] "GET /api/resource/99 HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:03:30] "GET /api/resource/99?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:03:30] "GET /api/resource/99?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:03:30] "GET /api/resource/99?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:03:31] "GET /api/resource/99?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:03:31] "GET /api/resource/99?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:04:24] "GET /api/resource/99 HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:04:24] "GET /api/resource/99?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:04:24] "GET /api/resource/99?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:04:24] "GET /api/resource/99?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:04:25] "GET /api/resource/99?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:04:25] "GET /api/resource/99?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:07:29] "GET /api/resource/99 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:02] "GET /api/resource/99 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:10] "GET /api/user/445?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:10] "GET /api/user/445?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:10] "GET /api/user/445?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:10] "GET /api/user/445?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:10] "GET /api/user/445?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:22] "GET /api/user/445 HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:23] "GET /api/user/445?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:23] "GET /api/user/445?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:23] "GET /api/user/445?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:23] "GET /api/user/445?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:13:23] "GET /api/user/445?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:16:54] "GET /api/user/445 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:21:34] "GET /api/user/445 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:23:45] "DELETE /api/user/893 HTTP/1.1" 204 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:25:22] "PUT /api/user/892 HTTP/1.1" 400 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:26:47] "PUT /api/user/892 HTTP/1.1" 400 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:28:50] "PUT /api/user/892 HTTP/1.1" 400 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:30:56] "PUT /api/user/892 HTTP/1.1" 204 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:31:04] "PUT /api/user/892 HTTP/1.1" 204 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:31:23] "PUT /api/user/892 HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:31:25] "GET /api/user/892?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:31:25] "GET /api/user/892?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:31:25] "GET /api/user/892?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:31:25] "GET /api/user/892?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:31:25] "GET /api/user/892?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:31:47] "PUT /api/user/892 HTTP/1.1" 204 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:32:59] "PUT /api/user/892 HTTP/1.1" 204 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:37:33] "PUT /api/user/892 HTTP/1.1" 204 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:37:48] "PUT /api/user/892 HTTP/1.1" 204 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:38:46] "PUT /api/user/892 HTTP/1.1" 204 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:39:45] "PUT /api/user/892 HTTP/1.1" 204 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:40:53] "GET /api/users HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:41:03] "GET /api/users?page=2 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:41:11] "GET /api/users/463 HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:41:12] "GET /api/users/463?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:41:12] "GET /api/users/463?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:41:12] "GET /api/users/463?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:41:12] "GET /api/users/463?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:41:12] "GET /api/users/463?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:41:48] "GET /api/users HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:42:05] "GET /api/users HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:42:18] "GET /api/users?page=3 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 08:44:13] "GET /api/users?page=3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:14:50] "GET /api/project/1 HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:14:51] "GET /api/project/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:14:51] "GET /api/project/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:14:51] "GET /api/project/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:14:52] "GET /api/project/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:14:52] "GET /api/project/1?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:15:30] "GET /api/project/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:16:38] "GET /api/project/1 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:16:52] "GET /api/project/2 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:17:02] "GET /api/projects?page=1 HTTP/1.1" 401 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:18:10] "GET /api/projects?page=1 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:18:54] "GET /api/projects HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:19:14] "GET /api/projects HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:19:51] "DELETE /api/project/200 HTTP/1.1" 401 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:21:01] "DELETE /api/project/200 HTTP/1.1" 401 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:21:31] "DELETE /api/project/200 HTTP/1.1" 204 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:23:13] "PUT /api/project/892 HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:23:49] "PUT /api/project/199 HTTP/1.1" 204 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:24:20] "PUT /api/project/199 HTTP/1.1" 204 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:14] "POST /api/project/199 HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:15] "GET /api/project/199?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:15] "GET /api/project/199?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:15] "GET /api/project/199?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:16] "GET /api/project/199?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:16] "GET /api/project/199?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:19] "POST /api/project HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:20] "GET /api/project?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:20] "GET /api/project?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:20] "GET /api/project?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:20] "GET /api/project?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:20] "GET /api/project?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:21] "POST /api/project HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:22] "GET /api/project?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:22] "GET /api/project?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:22] "GET /api/project?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:22] "GET /api/project?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:22] "GET /api/project?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/project.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:26:37] "POST /api/project HTTP/1.1" 201 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/category.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:31:53] "GET /api/category/1 HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:32:03] "GET /api/category/49 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:32:06] "GET /api/categorys HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:32:22] "PUT /api/category/49 HTTP/1.1" 204 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:32:32] "DELETE /api/category/49 HTTP/1.1" 204 -
+INFO:werkzeug:192.168.1.103 - - [25/Dec/2018 10:32:39] "POST /api/category HTTP/1.1" 201 -
