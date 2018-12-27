@@ -74,5 +74,5 @@ class ProjectCollectionApi(Resource):
         projects = ProjectModel.query
         return projects
     
-api.add_resource(ProjectApi, '/project' ,'/project/<int:id>', endpoint='project')
+api.add_resource(ProjectApi, 'project' ,'/project/<int:id>', endpoint='project')
 api.add_resource(ProjectCollectionApi, '/projects' , endpoint='projects')

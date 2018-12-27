@@ -21,8 +21,18 @@ def init_log():
     basicConfig(filename='./log/resource-' + today_str + '.log', level=INFO)
 
 def start_remote_debug():
-    import ptvsd
-    ptvsd.enable_attach(address=('0.0.0.0', 8899), redirect_output=True)
+    try:
+        import socket
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.close()
+        import ptvsd
+        ptvsd.enable_attach(address=('0.0.0.0', 8000), redirect_output=True)
+        print('ptvsd is started')
+        # ptvsd.wait_for_attach()
+        # print('debugger is attached')
+    except OSError as exc:
+        print('ptvsd not started')
+        print(exc)
 
 def create_app(config_name):
     """
