@@ -4,6 +4,7 @@
 from functools import wraps
 from flask import g, request
 from app.lib.errors import forbidden_error
+from app.lib.helper import get_permissions
 
 def permission_required(permission):
     def decorator(f):
@@ -44,23 +45,16 @@ def paginate(max_per_page=20):
     return decorator
 
 
-def api_permission_control(request_info):
-    """
-    API权限控制装饰器
-    :param info:
-    :return:
-    """
-    def _access_control(func):
+def api_permission_control():
+    def access_control(func):
         def wrap_func(*args, **kwargs):
             try:
-                endpoint = request_info.endpoint
-                http_method = request_info.method
-                headers = request_info.headers
-                user_id = headers["User-Id"]
-                role = get_role(user_id)
-                Permissions = get_api_permission()
-                res = Permissions[role][endpoint][http_method]
-                if not method_dict[res]:
+                endpoint = request.endpoint
+                http_method = request.method
+                role_id = g.current_user.role_id
+                permissions = get_permissions(type='api').get(role_id)
+
+                if not method_dict[res]: 
                     return jsonify({'error': 'no permission',"code":403})
                 return func(args, **kwargs)
             except KeyError:
@@ -68,4 +62,4 @@ def api_permission_control(request_info):
             except Exception as e:
                 return jsonify({'error': 'api permission control error,error msg %s' % str(e), "code": 500})
             return wrap_func
-        return _access_control
+        return access_control

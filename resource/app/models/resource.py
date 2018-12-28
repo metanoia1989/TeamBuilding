@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- conding:utf8 -*-
 
-from app.extensions import db
 from datetime import datetime
-from app.models.base import CRUDMixin
+from app.extensions import db
+from app.models.base import Model
 
 
-class Resource(CRUDMixin, db.Model):
+class Resource(Model):
     """ 资源模型 """
     __tablename__ = 'resource'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

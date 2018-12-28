@@ -2,9 +2,9 @@
 # -*- conding:utf8 -*-
 
 from app.extensions import db
-from app.models.base import CRUDMixin
+from app.models.base import Model
 
-class Category(CRUDMixin, db.Model):
+class Category(Model):
     """ 标签模型 """
     __tablename__ = 'category'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

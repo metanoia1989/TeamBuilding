@@ -7,6 +7,7 @@ from app.api import api_blueprint
 from app.lib.errors import forbidden_error, unauthorized, success
 from app.extensions import auth
 from werkzeug.security import generate_password_hash, check_password_hash
+from app.lib.helper import get_permissions
 
 @auth.verify_token
 def verify_token(token):
@@ -43,5 +44,7 @@ def access_test():
 
 @api_blueprint.route('/filter')
 def filter():
+    data = get_permissions()
+    print(data)
     endpoint = request.endpoint
     return endpoint

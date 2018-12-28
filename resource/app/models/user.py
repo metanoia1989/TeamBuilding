@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 # -*- conding:utf8 -*-
 
-from app.extensions import db
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask import current_app, request, url_for
 from hashlib import md5
-from app.models.base import CRUDMixin
+from app.extensions import db
+from app.models.base import Model
 
-class User(CRUDMixin, db.Model):
+class User(Model):
     """ User表模型 """
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

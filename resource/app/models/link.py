@@ -3,9 +3,9 @@
 
 from app.extensions import db
 from datetime import datetime
-from app.models.base import CRUDMixin
+from app.models.base import Model
 
-class Link(CRUDMixin, db.Model):
+class Link(Model):
     """ 链接模型 """
     __tablename__ = 'links'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

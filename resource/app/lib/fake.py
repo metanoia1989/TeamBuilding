@@ -100,6 +100,7 @@ class FakerData():
             permission = Permission.query.filter_by(name=p.get('name')).first()
             if permission is not None:
                 continue
+            p['type'] = 'api'
             permission = Permission(**p)
             db.session.add(permission)
         db.session.commit()

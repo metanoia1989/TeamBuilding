@@ -3,10 +3,10 @@
 
 from app.extensions import db
 from app.models.relationship import RolePermission
+from app.models.base import Model
 from datetime import datetime
-from app.models.base import CRUDMixin
 
-class Role(CRUDMixin, db.Model):
+class Role(Model):
     """ 角色模型 """
     __tablename__ = 'role'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

@@ -3,9 +3,9 @@
 
 from app.extensions import db
 from datetime import datetime
-from app.models.base import CRUDMixin
+from app.models.base import Model
 
-class MediaType(CRUDMixin, db.Model):
+class MediaType(Model):
     """ 资源类型模型 """
     __tablename__ = 'media_type'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

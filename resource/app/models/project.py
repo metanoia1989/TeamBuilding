@@ -2,11 +2,11 @@
 # -*- conding:utf8 -*-
 
 from app.extensions import db
+from app.models.base import Model
 from app.models.relationship import ProjectResource
 from datetime import datetime
-from app.models.base import CRUDMixin
 
-class Project(CRUDMixin, db.Model):
+class Project(Model):
     """ 资源专题模型 """
     __tablename__ = 'project'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

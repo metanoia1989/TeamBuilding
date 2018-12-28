@@ -59,3 +59,184 @@ INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 617-732-751
 INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:14:06] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:14:06] "GET /api/filter?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:14:06] "GET /api/filter?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:14:06] "GET /api/filter?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:14:07] "GET /api/filter?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:14:07] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:14:08] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/config.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:14:28] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/helper.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:16:34] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/authentication.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:02] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:02] "GET /api/filter?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:02] "GET /api/filter?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:02] "GET /api/filter?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:02] "GET /api/filter?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:02] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:02] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/authentication.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:19] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:19] "GET /api/filter?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:19] "GET /api/filter?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:19] "GET /api/filter?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:19] "GET /api/filter?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:20] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:18:20] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/models/role.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:20:34] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:20:34] "GET /api/filter?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:20:34] "GET /api/filter?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:20:34] "GET /api/filter?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:20:34] "GET /api/filter?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:20:35] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:20:35] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/models/role.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:21:01] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:21:01] "GET /api/filter?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:21:01] "GET /api/filter?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:21:01] "GET /api/filter?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:21:02] "GET /api/filter?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:21:02] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:21:02] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/authentication.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:21:17] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/models/role.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:22:25] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/helper.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:23:08] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:23:08] "GET /api/filter?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:23:08] "GET /api/filter?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:23:08] "GET /api/filter?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:23:08] "GET /api/filter?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:23:08] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:23:09] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/helper.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:23:22] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/helper.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:23:38] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/helper.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:28:50] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/helper.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:29:30] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:29:38] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/helper.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:35:33] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:35:33] "GET /api/filter?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:35:33] "GET /api/filter?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:35:33] "GET /api/filter?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:35:33] "GET /api/filter?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:35:33] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:35:34] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/models/category.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:41:34] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:41:34] "GET /api/filter?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:41:34] "GET /api/filter?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:41:34] "GET /api/filter?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:41:34] "GET /api/filter?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:41:34] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:41:34] "GET /api/filter?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/models/base.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/helper.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:50:34] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/models/permission.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/fake.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/models/permission.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/helper.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [28/Dec/2018 09:56:24] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/helper.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/decorators.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/decorators.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/lib/decorators.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
