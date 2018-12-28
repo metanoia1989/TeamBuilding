@@ -11,9 +11,17 @@ from config import config
 from logging import basicConfig, INFO, info
 from os import getenv
 from datetime import date
-# import ptvsd
+import ptvsd
+import socket
+import sys
 
-# ptvsd.enable_attach(address=('0.0.0.0', 8899), redirect_output=True)
+try:
+    address = ('127.0.0.1', 11111)
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.bind(address)
+except OSError:
+    ptvsd.enable_attach(address=('0.0.0.0', 1234), redirect_output=True)
+    # ptvsd.wait_for_attach()
 
 app = create_app(getenv('FlASK_CONFIG') or 'default')
 today_str = date.today().strftime('%Y-%m-%d')
@@ -27,5 +35,4 @@ def make_shell_context():
 
 
 if __name__ == '__main__':
-    # if(getenv('FLASK_DEBUG') == 1):
     app.run(host='0.0.0.0', port=8888, debug=True)

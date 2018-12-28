@@ -1,0 +1,112 @@
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:51:13] "POST /api/tokens/ HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:51:23] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:52:19] "GET /api/test HTTP/1.1" 401 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:04] "GET /api/test HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:05] "GET /api/test?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:05] "GET /api/test?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:05] "GET /api/test?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:05] "GET /api/test?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:05] "GET /api/test?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/authentication.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:24] "GET /api/test HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:24] "GET /api/test?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:24] "GET /api/test?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:24] "GET /api/test?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:24] "GET /api/test?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:24] "GET /api/test?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/authentication.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:38] "GET /api/test HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/authentication.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:56] "GET /api/test HTTP/1.1" 500 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:57] "GET /api/test?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:57] "GET /api/test?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:57] "GET /api/test?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:57] "GET /api/test?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 09:53:57] "GET /api/test?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/authentication.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/run.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 10:31:43] "GET / HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 10:31:43] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 10:31:51] "GET /api/ HTTP/1.1" 401 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/run.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/app/api/authentication.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug:192.168.1.103 - - [26/Dec/2018 10:32:31] "GET /api/test HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/run.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/run.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/run.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/run.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419
+INFO:werkzeug: * Detected change in '/home/smithadam/Code/TeamBuilding/resource/run.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-358-419

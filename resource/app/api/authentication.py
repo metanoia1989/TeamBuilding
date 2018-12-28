@@ -41,4 +41,4 @@ def index():
 @api_blueprint.route('/test')
 @auth.login_required
 def test():
-    return success()
+    return request.endpoint
