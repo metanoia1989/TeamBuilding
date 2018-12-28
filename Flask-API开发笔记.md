@@ -458,4 +458,7 @@ ProjectResource = db.Table('project_resource',
 - [Flask-Cache](https://wizardforcel.gitbooks.io/flask-extension-docs/content/flask-cache.html)
   
 避免频繁地查询数据库，必须缓存所有权限、用户权限
-
+这个是缓存函数，粒度太粗了，还是用字典来实现好，粒度比较细，就是不会持久化。
+只是简单的角色权限也不需要持久化。 
+编程的世界还是很精彩的，看别人类库的文件组织，非常优秀，代码我一时半会还吃不透。
+现在的我，编程认知还是初级阶段，加油加油，精彩无限。
