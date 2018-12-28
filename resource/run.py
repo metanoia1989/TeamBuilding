@@ -1,38 +1,26 @@
 #!/usr/bin/env python3
 # -*- conding:utf8 -*-
 
-from app import create_app
+from app import app, start_remote_debug
 from app.extensions import db
 from app.models.permission import Permission
 from app.models.user import User
 from app.models.role import Role
 from app.lib.fake import FakerData
-from config import config
-from logging import basicConfig, INFO, info
-from os import getenv
-from datetime import date
-import ptvsd
-import socket
-import sys
+from app.lib.command import init_db
+from dotenv import find_dotenv, load_dotenv
+import os
 
-try:
-    address = ('127.0.0.1', 11111)
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.bind(address)
-except OSError:
-    ptvsd.enable_attach(address=('0.0.0.0', 1234), redirect_output=True)
-    # ptvsd.wait_for_attach()
+# 加载 .env 为环境变量
+load_dotenv(find_dotenv())
 
-app = create_app(getenv('FlASK_CONFIG') or 'default')
-today_str = date.today().strftime('%Y-%m-%d')
-basicConfig(filename='./log/resource-' + today_str + '.log', level=INFO)
-
-
-# 集成 Python shell
 @app.shell_context_processor
 def make_shell_context():
+    """集成 Python shell""" 
     return dict(app=app, db=db, Permission=Permission, User=User, Role=Role, FakerData=FakerData)
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8888, debug=True)
+    if int(os.environ.get('FLASK_REMOTE_DEBUG')):
+        start_remote_debug()
+    app.run(host='0.0.0.0', port=8888)

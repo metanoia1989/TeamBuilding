@@ -2,6 +2,7 @@
 # -*- conding:utf8 -*-
 
 from faker import Factory
+from app import app
 from app.models.user import User
 from app.models.role import Role
 from app.models.permission import Permission
@@ -167,7 +168,7 @@ class FakerData():
         """创建资源专题，以及专题对应的资源"""
         import os, os.path 
         from slugify import slugify
-        imgs_dir = os.path.abspath(os.path.dirname(__file__) + os.path.sep + 'static/img')
+        imgs_dir = os.path.abspath(os.path.dirname(app.root_path) + os.path.sep + 'app/static/img')
         imgs_path = os.listdir(imgs_dir)
         imgs_path = [ 'img' + os.path.sep + path for path in imgs_path]
 

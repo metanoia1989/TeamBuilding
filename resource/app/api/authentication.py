@@ -37,8 +37,11 @@ def get_token():
 def index():
     return jsonify({ 'username': g.current_user.username })
 
+@api_blueprint.route('/access_test')
+def access_test():
+    return 'access_test'
 
-@api_blueprint.route('/test')
-@auth.login_required
-def test():
-    return request.endpoint
+@api_blueprint.route('/filter')
+def filter():
+    endpoint = request.endpoint
+    return endpoint
