@@ -5,6 +5,7 @@ from flask import g, jsonify, request
 from app.models.user import User
 from app.api import api_blueprint
 from app.lib.errors import forbidden_error, unauthorized, success
+from app.lib.decorators import api_permission_control
 from app.extensions import auth
 from werkzeug.security import generate_password_hash, check_password_hash
 from app.lib.helper import get_permissions
@@ -43,8 +44,7 @@ def access_test():
     return 'access_test'
 
 @api_blueprint.route('/filter')
+@auth.login_required
+@api_permission_control()
 def filter():
-    data = get_permissions()
-    print(data)
-    endpoint = request.endpoint
-    return endpoint
+    return '哈利波特魔法石'

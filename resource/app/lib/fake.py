@@ -87,20 +87,20 @@ class FakerData():
         创建权限，以及插入角色对应的权限
         """
         permissions = [
-            { 'name': '用户管理', 'sources': 'User', 'action': 'all' },
-            { 'name': '角色管理', 'sources': 'Role', 'action': 'all' },
-            { 'name': '权限管理', 'sources': 'Permission', 'action': 'all' },
-            { 'name': '资源管理', 'sources': 'Resource', 'action': 'all' },
-            { 'name': '标签管理', 'sources': 'Category', 'action': 'all' },
-            { 'name': '专题管理', 'sources': 'Project', 'action': 'all' },
-            { 'name': '媒体类型管理', 'sources': 'MediaType', 'action': 'all' },
-            { 'name': '资源链接管理', 'sources': 'Link', 'action': 'all' },
+            { 'name': '用户管理', 'sources': 'user', 'action': 'all' },
+            { 'name': '角色管理', 'sources': 'role', 'action': 'all' },
+            { 'name': '权限管理', 'sources': 'permission', 'action': 'all' },
+            { 'name': '资源管理', 'sources': 'resource', 'action': 'all' },
+            { 'name': '标签管理', 'sources': 'category', 'action': 'all' },
+            { 'name': '专题管理', 'sources': 'project', 'action': 'all' },
+            { 'name': '媒体类型管理', 'sources': 'mediatype', 'action': 'all' },
+            { 'name': '资源链接管理', 'sources': 'link', 'action': 'all' },
         ]
         for p in permissions:
             permission = Permission.query.filter_by(name=p.get('name')).first()
             if permission is not None:
                 continue
-            p['type'] = 'api'
+            p['pclass'] = 'api'
             permission = Permission(**p)
             db.session.add(permission)
         db.session.commit()

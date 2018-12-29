@@ -4,3 +4,7 @@ FLASK_DEBUG=0
 FLASK_REMOTE_DEBUG=0
 FLASK_RUN_HOST=0.0.0.0
 FLASK_RUN_PORT=8888
+
+DEV_DATABASE_URL=mysql+pymysql://root:kuyewen1234@192.168.1.106/share_sources
+TEST_DATABASE_URL=mysql+pymysql://root:kuyewen1234@192.168.1.106/share_sources
+DATABASE_URL=mysql+pymysql://root:kuyewen1234@192.168.1.106/share_sources

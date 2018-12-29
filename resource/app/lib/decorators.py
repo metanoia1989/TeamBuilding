@@ -2,8 +2,8 @@
 # -*- conding:utf8 -*-
 
 from functools import wraps
-from flask import g, request
-from app.lib.errors import forbidden_error
+from flask import g, request, jsonify
+from app.lib.errors import forbidden_error, server_error
 from app.lib.helper import get_permissions
 
 def permission_required(permission):
@@ -50,16 +50,19 @@ def api_permission_control():
         def wrap_func(*args, **kwargs):
             try:
                 endpoint = request.endpoint
-                http_method = request.method
+                http_method = request.method.lower()
                 role_id = g.current_user.role_id
-                permissions = get_permissions(type='api').get(role_id)
-
-                if not method_dict[res]: 
-                    return jsonify({'error': 'no permission',"code":403})
-                return func(args, **kwargs)
+                permissions =  get_permissions(pclass='api').get(role_id)
+                permissions = map(lambda x: (x.get('pclass').lower() + '.' + x.get('sources').lower(), x.get('action')) , permissions)
+                for p in permissions:
+                    if endpoint == p[0] and p[1] == 'all':
+                        return func(args, **kwargs)
+                    if endpoint == p[0] and http_method == p[1]:
+                        return func(args, **kwargs)
+                return forbidden_error('no permission')
             except KeyError:
-                return jsonify({'error': 'no permission',"code":403})
+                return forbidden_error('no permission')
             except Exception as e:
-                return jsonify({'error': 'api permission control error,error msg %s' % str(e), "code": 500})
+                return server_error('api permission control error,error msg %s' % str(e))
             return wrap_func
         return access_control
