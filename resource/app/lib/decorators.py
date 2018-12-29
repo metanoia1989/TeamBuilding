@@ -47,6 +47,7 @@ def paginate(max_per_page=20):
 
 def api_permission_control():
     def access_control(func):
+        @wraps(func)
         def wrap_func(*args, **kwargs):
             try:
                 endpoint = request.endpoint
@@ -56,13 +57,15 @@ def api_permission_control():
                 permissions = map(lambda x: (x.get('pclass').lower() + '.' + x.get('sources').lower(), x.get('action')) , permissions)
                 for p in permissions:
                     if endpoint == p[0] and p[1] == 'all':
-                        return func(args, **kwargs)
+                        return func(*args, **kwargs)
+                    if endpoint == p[0] and p[1] == 'self':
+                        return func(*args, **kwargs)
                     if endpoint == p[0] and http_method == p[1]:
-                        return func(args, **kwargs)
+                        return func(*args, **kwargs)
                 return forbidden_error('no permission')
-            except KeyError:
+            except KeyError:  
                 return forbidden_error('no permission')
             except Exception as e:
                 return server_error('api permission control error,error msg %s' % str(e))
-            return wrap_func
-        return access_control
+        return wrap_func
+    return access_control

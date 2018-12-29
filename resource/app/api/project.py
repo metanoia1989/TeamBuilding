@@ -7,8 +7,8 @@ from app.api import api, meta_fields
 from app.api.resources import resource_fields
 from app.extensions import auth
 from app.models.project import Project as ProjectModel 
-from app.lib.errors import success, execute_success
-from app.lib.decorators import paginate
+from app.lib.errors import success, execute_success 
+from app.lib.decorators import paginate, api_permission_control
 
 # 请求字段过滤
 project_parser = reqparse.RequestParser()
@@ -34,9 +34,9 @@ project_collection_fields = {
 
 class ProjectApi(Resource):
     method_decorators = {
-        'delete': [auth.login_required],
-        'post': [auth.login_required],
-        'put': [auth.login_required],
+        'delete': [auth.login_required, api_permission_control()],
+        'post': [auth.login_required, api_permission_control()],
+        'put': [auth.login_required, api_permission_control()],
     }
 
     @marshal_with(project_fields)

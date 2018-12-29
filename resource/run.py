@@ -23,4 +23,5 @@ def make_shell_context():
 if __name__ == '__main__':
     if int(os.environ.get('FLASK_REMOTE_DEBUG')):
         start_remote_debug()   
-    app.run(host='0.0.0.0', port=8888, debug=os.environ.get('FLASK_DEBUG', False))
+    debug = int(os.environ.get('FLASK_DEBUG', 0))
+    app.run(host='0.0.0.0', port=8888, debug=debug)

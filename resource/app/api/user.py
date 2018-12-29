@@ -9,7 +9,7 @@ from app.extensions import auth
 from app.models.user import User as UserModel
 from app.models.role import Role as RoleModel
 from app.lib.errors import success, execute_success
-from app.lib.decorators import paginate
+from app.lib.decorators import paginate, api_permission_control
 
 # 请求字段过滤
 user_post_parser = reqparse.RequestParser()
@@ -54,9 +54,9 @@ user_collection_fields = {
 
 class UserApi(Resource):
     method_decorators = {
-        'delete': [auth.login_required],
-        'post': [auth.login_required],
-        'put': [auth.login_required],
+        'delete': [auth.login_required, api_permission_control()],
+        'post': [auth.login_required, api_permission_control()],
+        'put': [auth.login_required, api_permission_control()],
     }
 
     @marshal_with(user_fields)

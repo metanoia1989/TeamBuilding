@@ -8,6 +8,7 @@ from flask import current_app, request, url_for
 from hashlib import md5
 from app.extensions import db
 from app.models.base import Model
+from app.lib.helper import get_permissions
 
 class User(Model):
     """ User表模型 """
@@ -132,3 +133,17 @@ class User(Model):
         except:
             return None
         return User.query.get(data['id'])
+
+    def can(pclass='api'):
+        """验证用户是否有权限访问资源"""
+        endpoint = request.endpoint
+        http_method = request.method.lower()
+        role_id = g.current_user.role_id
+        permissions =  get_permissions(pclass).get(role_id)
+        permissions = map(lambda x: (x.get('pclass').lower() + '.' + x.get('sources').lower(), x.get('action')) , permissions)
+        for p in permissions:
+            if endpoint == p[0] and p[1] == 'all':
+                return True
+            if endpoint == p[0] and http_method == p[1]:
+                return True
+        return False

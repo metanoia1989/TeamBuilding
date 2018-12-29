@@ -21,4 +21,6 @@ from . import authentication
 from . import resources
 from . import user
 from . import project
-from . import test
+
+# 错误处理
+from app.lib.errors import validation_error, not_found_error

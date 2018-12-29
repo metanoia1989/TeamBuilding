@@ -91,6 +91,7 @@ class FakerData():
             { 'name': '角色管理', 'sources': 'role', 'action': 'all' },
             { 'name': '权限管理', 'sources': 'permission', 'action': 'all' },
             { 'name': '资源管理', 'sources': 'resource', 'action': 'all' },
+            { 'name': '管理自己的资源', 'sources': 'resource', 'action': 'self' },
             { 'name': '标签管理', 'sources': 'category', 'action': 'all' },
             { 'name': '专题管理', 'sources': 'project', 'action': 'all' },
             { 'name': '媒体类型管理', 'sources': 'mediatype', 'action': 'all' },
@@ -115,10 +116,12 @@ class FakerData():
         """
         webmaster = Role.query.filter_by(name='站长').first()
         admin = Role.query.filter_by(name='版主').first()
+        user = Role.query.filter_by(name='普通用户').first()
         permissions = Permission.query.all()
 
         webmaster.permissions = permissions
-        admin.permissions = [ p for p in permissions if p.sources in  ['Resource', 'Category', 'Project']]
+        admin.permissions = [ p for p in permissions if p.sources in  ['resource', 'category', 'project']]
+        
 
         db.session.add_all([webmaster, admin])
         db.session.commit()

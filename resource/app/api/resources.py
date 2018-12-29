@@ -9,8 +9,8 @@ from app.api.category import category_fields
 from app.extensions import auth
 from app.models.resource import Resource as ResourceModel
 from app.models.user import User as UserModel
-from app.lib.decorators import paginate
-from app.lib.errors import success, execute_success
+from app.lib.decorators import paginate, api_permission_control
+from app.lib.errors import success, execute_success, forbidden_error
 
 # 请求字段过滤
 resource_parser = reqparse.RequestParser()
@@ -43,9 +43,9 @@ resource_collection_fields = {
 
 class ResourceApi(Resource):
     method_decorators = {
-        'delete': [auth.login_required],
-        'post': [auth.login_required],
-        'put': [auth.login_required],
+        'delete': [auth.login_required, api_permission_control()],
+        'post': [auth.login_required, api_permission_control()],
+        'put': [auth.login_required, api_permission_control()],
     }
 
     @marshal_with(resource_fields)
@@ -59,6 +59,9 @@ class ResourceApi(Resource):
         resource = ResourceModel.query.filter_by(id=id).first()
         if not resource:
             abort(404)
+        if g.current_user != resource.author and \
+                not g.current_user.can():
+            return forbidden_error('Insufficient permissions')
         resource.delete()
         return execute_success()
     
@@ -73,6 +76,9 @@ class ResourceApi(Resource):
         resource = ResourceModel.query.filter_by(id=id).first()
         if not resource:
             abort(404)
+        if g.current_user != resource.author and \
+                not g.current_user.can():
+            return forbidden_error('Insufficient permissions')
         resource.update(**resource_parser.parse_args())
         return execute_success()
 

@@ -155,3 +155,452 @@ INFO:werkzeug: * Debugger PIN: 617-732-751
 INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
 INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\api\\authentication.py', reloading
 INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:30:48] "GET /api/filter HTTP/1.1" 401 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:31:02] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:33:00] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:49:44] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:52:53] "GET /api/filter HTTP/1.1" 500 -
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:53:53] "GET /api/filter HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\api\\authentication.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:55:59] "GET /api/filterr HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:56:00] "GET /api/filterr HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:56:19] "GET /api/filterr HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\api\\authentication.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:57:56] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:58:04] "GET /api/filter HTTP/1.1" 403 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 13:58:14] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\api\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:00:06] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\lib\\errors.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:02:21] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:02:22] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:02:23] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:02:24] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:02:25] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:02:25] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:02:26] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:02:26] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:02:26] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:02:27] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\api\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:05:42] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\lib\\errors.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:06:20] "GET /api/filterr HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:06:39] "GET /api/filter HTTP/1.1" 401 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:06:40] "GET /api/filterr HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:06:41] "GET /api/filterr?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:06:41] "GET /api/filterr?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:06:41] "GET /api/filterr?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:06:42] "GET /api/filterr?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:06:43] "GET /api/filterr?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:06:44] "GET /api/filterr?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\lib\\errors.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:07:08] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\lib\\errors.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:07:32] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\lib\\errors.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:07:56] "GET /api/filterr HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:07:56] "GET /api/filterr?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:07:56] "GET /api/filterr?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:07:56] "GET /api/filterr?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:07:57] "GET /api/filterr?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:07:57] "GET /api/filterr?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:07:58] "GET /api/filterr?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\lib\\errors.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:15] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\lib\\errors.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:42] "GET /api/filterr HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:42] "GET /api/filterr?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:43] "GET /api/filterr?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:43] "GET /api/filterr?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:43] "GET /api/filterr?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:43] "GET /api/filterr?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:44] "GET /api/filterr?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:46] "GET /api/filterr HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:46] "GET /api/filterr?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:46] "GET /api/filterr?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:46] "GET /api/filterr?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:46] "GET /api/filterr?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:46] "GET /api/filterr?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:46] "GET /api/filterr?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\lib\\errors.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:08:56] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\lib\\errors.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:13:19] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:15:32] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:15:34] "GET /api/filterr HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 14:15:37] "GET /api/filter HTTP/1.1" 401 -
+ERROR:flask.app:Exception on /api/resource [GET]
+Traceback (most recent call last):
+  File "D:\Program\Python37\lib\site-packages\pymysql\connections.py", line 583, in connect
+    **kwargs)
+  File "D:\Program\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2158, in _wrap_pool_connect
+    return fn()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 400, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 788, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 529, in checkout
+    rec = pool._do_get()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 1193, in _do_get
+    self._dec_overflow()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
+    raise value
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 1190, in _do_get
+    return self._create_connection()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 347, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 474, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 671, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\strategies.py", line 106, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 412, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "D:\Program\Python37\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Program\Python37\lib\site-packages\pymysql\connections.py", line 325, in __init__
+    self.connect()
+  File "D:\Program\Python37\lib\site-packages\pymysql\connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '192.168.1.106' (timed out)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Program\Python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Program\Python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\Program\Python37\lib\site-packages\flask_restful\__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "D:\Program\Python37\lib\site-packages\flask\views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "D:\Program\Python37\lib\site-packages\flask_restful\__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "D:\Program\Python37\lib\site-packages\flask_restful\__init__.py", line 665, in wrapper
+    resp = f(*args, **kwargs)
+  File "E:\liushenhai\teambuilding\resource\app\api\resources.py", line 53, in get
+    resource = ResourceModel.query.filter_by(id=id).first()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 2895, in first
+    ret = list(self[0:1])
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 2687, in __getitem__
+    return list(res)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
+    return self._execute_and_instances(context)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 3016, in _execute_and_instances
+    close_with_result=True)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 3025, in _get_bind_args
+    **kw
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 3007, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\session.py", line 1046, in connection
+    execution_options=execution_options)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\session.py", line 1051, in _connection_for_bind
+    engine, execution_options)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\session.py", line 409, in _connection_for_bind
+    conn = bind.contextual_connect()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2123, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2162, in _wrap_pool_connect
+    e, dialect, self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception_noconnection
+    exc_info
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2158, in _wrap_pool_connect
+    return fn()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 400, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 788, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 529, in checkout
+    rec = pool._do_get()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 1193, in _do_get
+    self._dec_overflow()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
+    raise value
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 1190, in _do_get
+    return self._create_connection()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 347, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 474, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 671, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\strategies.py", line 106, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 412, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "D:\Program\Python37\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Program\Python37\lib\site-packages\pymysql\connections.py", line 325, in __init__
+    self.connect()
+  File "D:\Program\Python37\lib\site-packages\pymysql\connections.py", line 630, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '192.168.1.106' (timed out)") (Background on this error at: http://sqlalche.me/e/e3q8)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 15:08:16] "GET /api/resource HTTP/1.1" 500 -
+ERROR:flask.app:Exception on /api/resource/1 [GET]
+Traceback (most recent call last):
+  File "D:\Program\Python37\lib\site-packages\pymysql\connections.py", line 583, in connect
+    **kwargs)
+  File "D:\Program\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2158, in _wrap_pool_connect
+    return fn()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 400, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 788, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 529, in checkout
+    rec = pool._do_get()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 1193, in _do_get
+    self._dec_overflow()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
+    raise value
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 1190, in _do_get
+    return self._create_connection()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 347, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 474, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 671, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\strategies.py", line 106, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 412, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "D:\Program\Python37\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Program\Python37\lib\site-packages\pymysql\connections.py", line 325, in __init__
+    self.connect()
+  File "D:\Program\Python37\lib\site-packages\pymysql\connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '192.168.1.106' (timed out)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Program\Python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Program\Python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\Program\Python37\lib\site-packages\flask_restful\__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "D:\Program\Python37\lib\site-packages\flask\views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "D:\Program\Python37\lib\site-packages\flask_restful\__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "D:\Program\Python37\lib\site-packages\flask_restful\__init__.py", line 665, in wrapper
+    resp = f(*args, **kwargs)
+  File "E:\liushenhai\teambuilding\resource\app\api\resources.py", line 53, in get
+    resource = ResourceModel.query.filter_by(id=id).first()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 2895, in first
+    ret = list(self[0:1])
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 2687, in __getitem__
+    return list(res)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
+    return self._execute_and_instances(context)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 3016, in _execute_and_instances
+    close_with_result=True)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 3025, in _get_bind_args
+    **kw
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\query.py", line 3007, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\session.py", line 1046, in connection
+    execution_options=execution_options)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\session.py", line 1051, in _connection_for_bind
+    engine, execution_options)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\orm\session.py", line 409, in _connection_for_bind
+    conn = bind.contextual_connect()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2123, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2162, in _wrap_pool_connect
+    e, dialect, self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception_noconnection
+    exc_info
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2158, in _wrap_pool_connect
+    return fn()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 400, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 788, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 529, in checkout
+    rec = pool._do_get()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 1193, in _do_get
+    self._dec_overflow()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
+    raise value
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 1190, in _do_get
+    return self._create_connection()
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 347, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 474, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\pool.py", line 671, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\strategies.py", line 106, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\Program\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 412, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "D:\Program\Python37\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Program\Python37\lib\site-packages\pymysql\connections.py", line 325, in __init__
+    self.connect()
+  File "D:\Program\Python37\lib\site-packages\pymysql\connections.py", line 630, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '192.168.1.106' (timed out)") (Background on this error at: http://sqlalche.me/e/e3q8)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 15:08:38] "GET /api/resource/1 HTTP/1.1" 500 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 15:09:42] "GET /api/resource/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 15:10:06] "GET /api/resource/17 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 15:10:51] "POST /api/resource/17 HTTP/1.1" 500 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\api\\resources.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 15:12:04] "POST /api/resource/17 HTTP/1.1" 500 -
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\api\\user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\api\\project.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\api\\category.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'E:\\liushenhai\\teambuilding\\resource\\app\\api\\project.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 617-732-751
+INFO:werkzeug: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 15:14:24] "GET /api/resource/17 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 15:14:30] "PUT /api/resource/17 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 15:14:34] "PUT /api/resource/17 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2018 15:14:43] "GET /api/filter HTTP/1.1" 401 -

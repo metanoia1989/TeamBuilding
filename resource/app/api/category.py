@@ -7,7 +7,7 @@ from app.api import api, meta_fields
 from app.extensions import auth
 from app.models.category import Category as CategoryModel 
 from app.lib.errors import success, execute_success
-from app.lib.decorators import paginate
+from app.lib.decorators import paginate, api_permission_control
 
 # 请求字段过滤
 category_parser = reqparse.RequestParser()
@@ -27,9 +27,9 @@ category_collection_fields = {
 
 class CategoryApi(Resource):
     method_decorators = {
-        'delete': [auth.login_required],
-        'post': [auth.login_required],
-        'put': [auth.login_required],
+        'delete': [auth.login_required, api_permission_control()],
+        'post': [auth.login_required, api_permission_control()],
+        'put': [auth.login_required, api_permission_control()],
     }
 
     @marshal_with(category_fields)

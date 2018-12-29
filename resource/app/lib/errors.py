@@ -5,11 +5,14 @@ from flask import jsonify
 from app.api import api_blueprint
 from app.extensions import auth
 from app.exceptions import ValidationError
-# from .authentication import auth
 
-@api_blueprint.errorhandler(ValidationError)
+@api_blueprint.app_errorhandler(ValidationError)
 def validation_error(e):
     return bad_request(e.args[0])
+
+@api_blueprint.app_errorhandler(404)
+def not_found_error(e):
+    return not_found()
 
 def success(msg='ok'):
     response = jsonify({'error_code': 0, 'msg': msg})
