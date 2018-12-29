@@ -34,9 +34,9 @@ project_collection_fields = {
 
 class ProjectApi(Resource):
     method_decorators = {
-        'delete': [auth.login_required, api_permission_control()],
-        'post': [auth.login_required, api_permission_control()],
-        'put': [auth.login_required, api_permission_control()],
+        'delete': [api_permission_control(), auth.login_required], 
+        'post': [api_permission_control(), auth.login_required],
+        'put': [api_permission_control(), auth.login_required],
     }
 
     @marshal_with(project_fields)

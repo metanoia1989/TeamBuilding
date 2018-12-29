@@ -53,8 +53,7 @@ def api_permission_control():
                 endpoint = request.endpoint
                 http_method = request.method.lower()
                 role_id = g.current_user.role_id
-                permissions =  get_permissions(pclass='api').get(role_id)
-                permissions = map(lambda x: (x.get('pclass').lower() + '.' + x.get('sources').lower(), x.get('action')) , permissions)
+                permissions =  get_permissions('api').get(role_id)
                 for p in permissions:
                     if endpoint == p[0] and p[1] == 'all':
                         return func(*args, **kwargs)
@@ -62,8 +61,6 @@ def api_permission_control():
                         return func(*args, **kwargs)
                     if endpoint == p[0] and http_method == p[1]:
                         return func(*args, **kwargs)
-                return forbidden_error('no permission')
-            except KeyError:  
                 return forbidden_error('no permission')
             except Exception as e:
                 return server_error('api permission control error,error msg %s' % str(e))

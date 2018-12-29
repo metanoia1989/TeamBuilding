@@ -43,9 +43,9 @@ resource_collection_fields = {
 
 class ResourceApi(Resource):
     method_decorators = {
-        'delete': [auth.login_required, api_permission_control()],
-        'post': [auth.login_required, api_permission_control()],
-        'put': [auth.login_required, api_permission_control()],
+        'delete': [api_permission_control(), auth.login_required], 
+        'post': [api_permission_control(), auth.login_required],
+        'put': [api_permission_control(), auth.login_required],
     }
 
     @marshal_with(resource_fields)
@@ -77,7 +77,7 @@ class ResourceApi(Resource):
         if not resource:
             abort(404)
         if g.current_user != resource.author and \
-                not g.current_user.can():
+                not g.current_user.can('api'):
             return forbidden_error('Insufficient permissions')
         resource.update(**resource_parser.parse_args())
         return execute_success()

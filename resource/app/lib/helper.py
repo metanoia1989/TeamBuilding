@@ -9,11 +9,14 @@ def get_permissions(pclass='api'):
     获取所有角色和权限关联数据
     """
     roles = Role.query.all()
-    data = Cache.get('api_permissions')  
-    if data is not None:
+    data = Cache.get('{}_permissions'.format(pclass)) 
+    if data is None:
+        data = {}
+    else:
         return data
     for role in roles:
         permissions = [ p.dict() for p in role.permissions.filter_by(pclass=pclass).all()]
-        data[role.id] = permissions
-    Cache.set('api_permissions', data)
+        permissions = map(lambda p: (p.get('pclass').lower() + '.' + p.get('sources').lower(), p.get('action')) , permissions)
+        data[role.id] = list(permissions)
+    Cache.set('{}_permissions'.format(pclass), data)
     return data

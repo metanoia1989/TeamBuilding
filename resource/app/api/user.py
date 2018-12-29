@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- conding:utf8 -*-
 
-from flask import abort
+from flask import abort, g
 from flask_restful import Resource, fields, marshal_with, reqparse, inputs
 from werkzeug.security import generate_password_hash
 from app.api import api, meta_fields
 from app.extensions import auth
 from app.models.user import User as UserModel
 from app.models.role import Role as RoleModel
-from app.lib.errors import success, execute_success
+from app.lib.errors import success, execute_success, forbidden_error
 from app.lib.decorators import paginate, api_permission_control
 
 # 请求字段过滤
@@ -54,9 +54,9 @@ user_collection_fields = {
 
 class UserApi(Resource):
     method_decorators = {
-        'delete': [auth.login_required, api_permission_control()],
-        'post': [auth.login_required, api_permission_control()],
-        'put': [auth.login_required, api_permission_control()],
+        'delete': [api_permission_control(), auth.login_required], 
+        'post': [api_permission_control(), auth.login_required],
+        'put': [api_permission_control(), auth.login_required],
     }
 
     @marshal_with(user_fields)
@@ -70,6 +70,9 @@ class UserApi(Resource):
         user = UserModel.query.filter_by(id=id).first()
         if not user:
             abort(404)
+        if g.current_user != user and \
+                not g.current_user.can('api'):
+            return forbidden_error('Insufficient permissions')
         user.delete()
         return execute_success()
     
@@ -77,7 +80,9 @@ class UserApi(Resource):
         args = user_post_parser.parse_args()
         if 'password_hash' in args:
             args.password_hash = generate_password_hash(args.password_hash)
-        # user owns the task
+        if g.current_user != user and \
+                not g.current_user.can('api'):
+            return forbidden_error('Insufficient permissions')
         args['author_id'] = g.current_user.id
         user = UserModel.create(**args)
         return success()
@@ -86,7 +91,9 @@ class UserApi(Resource):
         user = UserModel.query.filter_by(id=id).first()
         if not user:
             abort(404)
-
+        if g.current_user != user and \
+                not g.current_user.can('api'):
+            return forbidden_error('Insufficient permissions')
         args = user_put_parser.parse_args()
         if 'password_hash' in args:
             args.password_hash = generate_password_hash(args.password_hash)

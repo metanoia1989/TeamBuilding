@@ -44,7 +44,7 @@ def create_app(config_name):
 
     register_blueprint(app)
     register_extensions(app)
-    init_log()
+    # init_log()
 
     return app
 
